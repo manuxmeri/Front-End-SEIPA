@@ -1,0 +1,156 @@
+.borderso{
+    border-top: solid 1px rgb(199, 199, 199);
+    
+}
+input{
+    border:  solid 1px  rgb(134, 134, 134);
+    margin-top: 5px;
+   
+}
+.bordeInput{
+    margin-top: 30px;
+    margin-top: 5px;
+}
+
+
+select{
+   
+ 
+    box-shadow: 1px 1px 3px  rgb(122, 122, 122);
+    margin-top: 5px;
+}
+
+.btn{
+    width:130px;
+    height: 40px;
+    
+}
+.textoInput{
+    font-family: 'Montserrat'; 
+        color: rgb(66, 66, 66);
+        font-weight: 700;
+        font-size: 15px;
+        margin-bottom: 5px;
+}
+
+.textoInfo{
+    font-family: 'Montserrat'; 
+        color: rgb(255, 255, 255);
+       
+        font-size: 15px;
+       
+}
+
+
+
+dialog {
+    padding: 0;
+    border: 1px solid #d9d3d3;
+    box-shadow: 0px 4px 4px #7B7B7C(146, 146, 146, 0.9);
+
+}
+
+dialog .modal-body {
+    padding: 20px 20px;
+    border: 1px solid #d9d3d3;
+    box-shadow: 0px 4px 4px #7B7B7C(146, 146, 146, 0.9);
+
+
+}
+
+dialog::backdrop {
+    background: #7B7B7C(146, 146, 146, 0.9);
+}
+
+dialog .modal-header {
+    background-color: #691831;
+    color: white;
+    padding: 10px 28%;
+}
+
+input[type="file"]::file-selector-button {
+    display: none;
+}
+
+.file-input{
+    border: none;
+    padding-left: 10px;
+    width: 200px;
+}
+
+.custom-button {
+    background-color: #C8DBD5;
+    padding: 5px 4px;
+    border-radius: 0.3rem;
+    border: none;
+    cursor: pointer;
+}
+.butto2 {
+    background-color: #691831;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    font-family: 'Montserrat';
+    font-size: 18px;
+    width: 150px;
+    height: 50px;
+}
+
+.button2 {
+    background-color: white;
+    color: #691831;
+    border: 2px solid #691831;
+}
+
+.button2:hover {
+    background-color: #691831;
+    color: white;
+}
+
+
+.butto {
+    background-color: #1E437B;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    font-family: 'Montserrat';
+    font-size: 18px;
+    margin-left: 35px;
+    width: 150px;
+    height: 50px;
+}
+
+.button1 {
+    background-color: white;
+    color: #1E437B;
+    border: 2px solid #1E437B;
+}
+
+.button1:hover {
+    background-color: #1E437B;
+    color: white;
+}
+.container-fluid {
+    width: 80%;
+  }
+
+  .marginput{
+    margin-top: 15px;
+
+  }
+  .fondotabla{
+    background-color: #3d3d3d;
+    color: rgb(255, 255, 255);
+    border:solid 1px rgb(129, 129, 129);
+  }
+td{
+    border:solid 1px rgb(129, 129, 129);
+}

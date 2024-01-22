@@ -1,0 +1,25 @@
+<app-header></app-header>
+
+
+<form [formGroup]="formuOfi" (ngSubmit)="put()" ngNativeValidate>
+    <div class="form-group">
+      <label for="">Nombre:</label>
+      <input type="text" required formControlName="NombreOficina" id="" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="">Ubicacion:</label>
+        <input type="text" required name="" formControlName="Ubicacion" id="" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="">Telefono:</label>
+        <input type="text" required name="" formControlName="Telefono" id="" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="">Email:</label>
+        <input type="text" required name="" formControlName="Email" id="" class="form-control">
+      </div>
+      <br>
+    <button  class="btn btn-primary" class="centrado ">Guardar Cambio</button>
+  </form>
+
+<app-footer></app-footer>

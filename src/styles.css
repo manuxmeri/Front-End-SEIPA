@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+.success-snackbar {
+    position: fixed;
+    top: 28%;
+    right: 30%;
+    width: 90%;
+    background-color: #80c990;
+    color: #ffffff;
+    font-family: 'Montserrat'; 
+    font-size: 28px;
+    border-radius: 8px;
+    box-shadow: 0 3px 3px rgb(134, 134, 134);
+    line-height: 1.5;
+}
+
+.error-snackbar {
+    position: fixed;
+    top: 28%;
+    right: 30%;
+    width: 90%;
+    background-color: #f79892;
+    color: #ffffff;
+    font-family: 'Montserrat'; 
+    font-size: 28px;
+    border-radius: 8px;
+    box-shadow: 0 3px 3px rgb(134, 134, 134);
+    line-height: 1.5;
+}

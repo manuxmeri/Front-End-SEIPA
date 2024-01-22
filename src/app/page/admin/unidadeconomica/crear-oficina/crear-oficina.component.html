@@ -1,0 +1,64 @@
+<app-header></app-header>
+
+
+<section class="container ">
+
+    <div class="d-flex justify-content-between " style="margin-top:20px;">
+        <div class="d-flex">
+            <i class="bi bi-house-door" style="font-size: 25px;"></i>
+            <i class="bi bi-chevron-right" style="font-size: 25px;"></i>
+            <p style="font-family: 'Montserrat';font-size: 25px; ">Panel</p>
+            <i class="bi bi-chevron-right" style="font-size: 25px;"></i>
+            <p style="font-family: 'Montserrat';font-size: 25px; ">Oficina</p>
+
+        </div>
+        <a href="#" style="font-family: 'Montserrat';font-size: 25px; color:blue; margin-right:15px;">Manual de usuario</a>
+    </div>
+
+    <div class="textosolicitud " style=" font-family: 'Montserrat'; margin-top:30px; ">
+        <p style=" font-size: 50px;"><strong>Agregar Oficina</strong></p>
+    </div>
+    
+    <div class="borderso text-center"></div>
+
+    <div class="row formularyborder" style="margin-top: 50px;">
+        <form class="row formularyborder" action="" [formGroup]="FormOfi" (submit)="enviar()" ngNativeValidate>
+    
+            
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="control-label textoInput">Nombre:</label>
+                <input class="form-control required" id="" formControlName="NombreOficina" type="text" required>
+                <p class="vacio" id=""></p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="control-label textoInput">Ubicacion:</label>
+                <input class="form-control required" id="" formControlName="Ubicacion" type="text">
+                <p class="vacio" id=""></p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="control-label textoInput">Telefono:</label>
+                <input class="form-control required" id="" formControlName="Telefono" type="text" required>
+                <p class="vacio" id=""></p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="control-label textoInput">Email:</label>
+                <input class="form-control required" id="" formControlName="Email" type="text" required>
+                <p class="vacio" id=""></p>
+            </div>
+        </div>
+        <button class="btn botones" style="background-color: brown; color:white; width: 10%; height: 38%; margin-left: 5%;">Guardar</button>
+    </form>
+    </div>
+    <br>
+</section>
+
+<app-footer></app-footer>

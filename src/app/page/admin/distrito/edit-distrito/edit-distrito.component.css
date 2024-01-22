@@ -1,0 +1,148 @@
+
+.textosolicitud{
+    margin-top: 50px;
+    margin-bottom: 30px;
+   
+}
+select{
+   
+ 
+    box-shadow: 3px 3px 5px  rgb(122, 122, 122);
+}
+  
+
+
+.solicitud{
+    font-family: 'Montserrat'; font-size: 60px;
+    
+}
+p{
+    font-family: 'Montserrat'; font-size: 17px;
+
+}
+.container {
+    width: 50%;
+  }
+
+  .borderso {
+    border-top: solid 1px rgb(199, 199, 199);
+}
+
+.titu {
+    font-family: 'Montserrat';
+    font-size: 18px;
+}
+
+
+.butto2 {
+    background-color: #691831;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    font-family: 'Montserrat';
+    font-size: 18px;
+    margin-top: 30px;
+    width: 150px;
+    height: 50px;
+}
+
+.button2 {
+    background-color: white;
+    color: #691831;
+    border: 2px solid #691831;
+}
+
+.button2:hover {
+    background-color: #691831;
+    color: white;
+}
+
+
+.butto {
+    background-color: #1E437B;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    font-family: 'Montserrat';
+    font-size: 18px;
+    margin-top: 30px;
+    margin-left: 50px;
+    width: 150px;
+    height: 50px;
+}
+
+.button1 {
+    background-color: white;
+    color: #1E437B;
+    border: 2px solid #1E437B;
+}
+
+.button1:hover {
+    background-color: #1E437B;
+    color: white;
+}
+
+
+
+
+
+dialog {
+    padding: 0;
+    border: 1px solid #d9d3d3;
+    box-shadow: 0px 4px 4px #7B7B7C(146, 146, 146, 0.9);
+
+}
+
+dialog .modal-body {
+    padding: 40px 70px;
+    border: 1px solid #d9d3d3;
+    box-shadow: 0px 4px 4px #7B7B7C(146, 146, 146, 0.9);
+
+
+}
+
+dialog::backdrop {
+    background: #7B7B7C(146, 146, 146, 0.9);
+}
+
+dialog .modal-header {
+    background-color: #691831;
+    color: white;
+    padding: 15px 28%;
+}
+
+dialog {
+    padding: 0;
+    border: 1px solid #d9d3d3;
+    box-shadow: 0px 4px 4px #7B7B7C(146, 146, 146, 0.9);
+
+}
+
+dialog .modal-body {
+    padding: 40px 70px;
+    border: 1px solid #d9d3d3;
+    box-shadow: 0px 4px 4px #7B7B7C(146, 146, 146, 0.9);
+
+
+}
+
+dialog::backdrop {
+    background: #7B7B7C(146, 146, 146, 0.9);
+}
+
+dialog .modal-header {
+    background-color: #691831;
+    color: white;
+    padding: 15px 28%;
+}
+.mayus{
+    text-transform: uppercase;
+}

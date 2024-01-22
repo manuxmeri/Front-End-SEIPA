@@ -1,0 +1,10 @@
+<p>menu works!</p>
+<nav>
+    <ul>
+      <li *ngFor="let item of menu">
+        <a routerLink="item.url">
+          <i class="fa {{ item.icono }}"></i> {{ item.titulo }}
+        </a>
+      </li>
+    </ul>
+  </nav>

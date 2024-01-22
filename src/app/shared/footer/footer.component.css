@@ -1,0 +1,40 @@
+.color2{
+    background-color: #7B1E34;
+    color: white;
+   
+    
+bottom: 0;
+}
+
+.posi{
+    padding-left: 15px;
+    width: 50px;
+	height: 50px;
+    
+}
+
+.line{
+   height: 3px; 
+   color: #fccd61;
+   background-color: #fccd61;
+}
+.logo{
+width: 300px;
+height: 150px;
+object-fit: scale-down;
+}
+.bandafooter{
+    
+    width: 100%;
+	
+  
+}
+footer{
+    width: 100%;
+    margin-bottom: 0;
+   margin-left: 0;
+ 
+   
+}
+
+

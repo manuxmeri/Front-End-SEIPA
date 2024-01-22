@@ -1,0 +1,96 @@
+<app-header></app-header>
+<div class="d-flex justify-content-between " style="margin-top:20px; margin-left:20px;" >
+   <div class="d-flex" >
+     <i class="bi bi-house-door" style="font-size: 22px;"></i>
+     <i class="bi bi-chevron-right" style="font-size: 22px;"></i>
+     <p style="font-family: 'Montserrat';font-size: 22px; " ><a href="panel" style="text-decoration:none">Panel</a></p>
+     <i class="bi bi-chevron-right" style="font-size: 22px;"></i>
+    <p style="font-family: 'Montserrat';font-size: 22px; "><a href="especies" style="text-decoration:none">Especies</a></p>
+    
+   </div>
+   <a href="#"   style="font-family: 'Montserrat';font-size: 22px; color:blue; margin-right:15px;">Manual de usuario</a>
+ 
+ </div>
+
+<section class="container">
+   <div class="textosolicitud " style=" font-family: 'Montserrat'; margin-top:30px; margin-bottom:30px;">
+      <p style=" font-size: 50px;"><strong>ESPECIES</strong></p>
+      <div>
+      </div>
+   </div>
+   <div class="order_boxes">
+      <div class="row">
+         <div class="col-lg-6 col-lx-4">
+           
+            <div>
+               <table class="table text-center"  style="text-transform: uppercase;">
+                <td class=" text-center textoInfo" style="background-color: #7B1E34;">#</td>
+                <td class=" text-center textoInfo" style="background-color: #7B1E34;">LISTA DE ESPECIES</td>
+                <td class=" text-center textoInfo" style="background-color: #7B1E34;">OPCIONES</td>
+                  <tr *ngFor="let especie of data ; let iControl = index">
+                     <td class="textoInput">{{especie.id}}</td>
+                     <td class="textoInput">{{especie.NombreEspecie}}</td>
+                     <td><a type="button" (click)="editar(especie.id)"><i class="bi bi-pen"></i></a>
+                        <a type="button" (click)="borrar(especie.id, iControl)"><i class="bi bi-trash" style="margin-left: 6%;"></i></a>
+                    </td>
+                    
+                  </tr>
+               </table>
+            </div>
+         </div>
+         <div class="col-lg-2 col-lx-4"></div>
+         <div class="col-lg-4 col-lx-4">
+            <div class="text-white p-1 text-center" style="background-color: #000000;">
+               AGREGAR ESPECIE
+            </div>
+            <form class="row" [formGroup]="FormEspecie" (submit)="enviar()" ngNativeValidate>
+              
+
+
+                  <div class="col-md-lg marginput">
+                     <div class="form-group">
+                        <label class="control-label textoInput">NOMBRE:</label>
+                        <input formControlName="NombreEspecie" type="text" maxlength="50" required class="form-control required"
+                           style="text-transform: uppercase;">
+                           <div
+                           *ngIf="
+                           FormEspecie.controls['NombreEspecie'].invalid &&
+                           (FormEspecie.controls['NombreEspecie'].dirty || FormEspecie.controls['NombreEspecie'].touched)
+                         ">
+                         <div *ngIf="FormEspecie.controls['NombreEspecie'].errors">
+                           <label  class="control-label " for="" style="background-color: #eb0339; color:white; font-size:12px;"> <i class="bi bi-exclamation-circle-fill"></i> El nombre es obligatorio</label>
+                         </div>
+                         
+                           </div>
+                         
+                        <p class="vacio" id=""></p>
+
+                        <div class="row">
+                            <div class="col-md-lg">
+                               <div class="d-flex justify-content-end  " style="margin-bottom: 50px;">
+                                  <button class="btn btn-default " (click)="cancelar()" type="button " height="40px;"
+                                     style="background-color: rgb(110, 109, 109); color:white; margin-right: 20px;">Cancelar</button>
+                                  <button class="btn  " style="background-color: brown; color:white;">Guardar</button>
+          
+                               </div>
+                            </div>
+                     </div>
+                  </div>
+
+               
+
+
+               
+               </div>
+            </form>
+         </div>
+
+      </div>
+   </div>
+</section>
+
+
+
+
+
+<app-footer></app-footer>

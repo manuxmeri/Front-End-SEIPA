@@ -1,0 +1,155 @@
+<app-header></app-header>
+
+<div class="d-flex justify-content-between " style="margin-top:20px; margin-left:20px;" >
+  <div class="d-flex" >
+    <i class="bi bi-house-door" style="font-size: 22px;"></i>
+    <i class="bi bi-chevron-right" style="font-size: 22px;"></i>
+    <p style="font-family: 'Montserrat';font-size: 22px; " ><a href="panel" style="text-decoration:none">Panel</a></p>
+    <i class="bi bi-chevron-right" style="font-size: 22px;"></i>
+   <p style="font-family: 'Montserrat';font-size: 22px; "><a href="oficinas" style="text-decoration:none">Oficina</a></p>
+   
+  </div>
+  <a href="#"   style="font-family: 'Montserrat';font-size: 22px; color:blue; margin-right:15px;">Manual de usuario</a>
+
+</div>
+
+<body>
+    
+
+<section class="container" style="margin-top: 50px;">
+<div class="order_boxes">
+      <div class="row">
+  
+<h1 > Lista de oficinas</h1>
+
+<div class="col-lg-6 col-lx-4">
+  
+<table class="table table-bordered">
+  
+    <thead style="color:DarkCyan" class="text-center table-dark"  >
+      <tr>
+        <th scope="col" style="background-color: #7B1E34;"># </th>
+        <th scope="col" style="background-color: #7B1E34;">Lista de oficinas </th>
+        <th scope="col" style="background-color: #7B1E34;">Opciones</th>
+      </tr>
+    </thead>
+    <tbody class="text-center mayus">
+      <tr *ngFor="let ofi of data ; let iControl = index">
+        <td>{{ofi.id}}</td>
+        <td class="mayus">{{ofi.NombreOficina}}</td>
+    
+        <td><a type="button" (click)="editar(ofi.id)"><i class="bi bi-pen"></i></a>
+            <a type="button" (click)="borrar(ofi.id, iControl)"><i class="bi bi-trash" style="margin-left: 6%;"></i></a>
+        </td>
+        
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+  
+<div class="col-lg-2 col-lx-4"></div>
+<div class="col-lg-4 col-lx-4">
+   <div class="text-white p-1 text-center" style="background-color: #000000;">
+      AGREGAR OFICINA
+   </div>
+   <form class="row" [formGroup]="FormOfi" (submit)="enviar()" ngNativeValidate>
+     
+
+
+         <div class="col-md-lg marginput">
+            <div class="form-group">
+               <label class="control-label textoInput">NOMBRE:</label>
+               <input formControlName="NombreOficina" maxlength="50"  type="text" required class="form-control required mayus" 
+               
+                  style="text-transform: uppercase;">
+                  <div
+                  *ngIf="
+                  FormOfi.controls['NombreOficina'].invalid &&
+                  (FormOfi.controls['NombreOficina'].dirty || FormOfi.controls['NombreOficina'].touched)
+                ">
+                <div *ngIf="FormOfi.controls['NombreOficina'].errors">
+                  <label  class="control-label " for="" style="background-color: #eb0339; color:white; font-size:12px;"> <i class="bi bi-exclamation-circle-fill"></i> El nombre es obligatorio</label>
+                </div>
+                
+                  </div>
+               <p class="vacio" id=""></p>
+
+               <label class="control-label textoInput">UBICACIÓN:</label>
+               <input formControlName="Ubicacion" type="text" required class="form-control required mayus" maxlength="100" 
+                  style="text-transform: uppercase;">
+                  <div
+                  *ngIf="
+                  FormOfi.controls['Ubicacion'].invalid &&
+                  (FormOfi.controls['Ubicacion'].dirty || FormOfi.controls['Ubicacion'].touched)
+                ">
+                <div *ngIf="FormOfi.controls['Ubicacion'].errors">
+                  <label  class="control-label " for="" style="background-color: #eb0339; color:white; font-size:12px;"> <i class="bi bi-exclamation-circle-fill"></i> La ubicación es obligatoria</label>
+                </div>
+                
+                  </div>
+                  
+                  
+               <p class="vacio" id=""></p>
+
+               <label class="control-label textoInput">TELEFONO:</label>
+               <input formControlName="Telefono"  required class="form-control required "
+                  style="text-transform: uppercase;"   type="number" min="0" step="1"  maxlength="10" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+
+                  <div
+                  *ngIf="
+                  FormOfi.controls['Telefono'].invalid &&
+                  (FormOfi.controls['Telefono'].dirty || FormOfi.controls['Telefono'].touched)
+                ">
+                <div *ngIf="FormOfi.controls['Telefono'].errors">
+                  <label  class="control-label " for="" style="background-color: #eb0339; color:white; font-size:12px;"> <i class="bi bi-exclamation-circle-fill"></i> El telefono es obligatorio</label>
+                </div>
+                
+                  </div>
+               <p class="vacio" id=""></p>
+
+               <label class="control-label textoInput">CORREO:</label>
+               <input formControlName="Email" type="text" required  maxlength="40" class="form-control required"
+                  >
+
+                  <div
+                  *ngIf="
+                  FormOfi.controls['Email'].invalid &&
+                  (FormOfi.controls['Email'].dirty || FormOfi.controls['Email'].touched)
+                ">
+                <div *ngIf="FormOfi.controls['Email'].errors">
+                  <label  class="control-label " for="" style="background-color: #eb0339; color:white; font-size:12px;"> <i class="bi bi-exclamation-circle-fill"></i> El correo es obligatorio</label>
+                </div>
+                
+                  </div>
+               <p class="vacio" id=""></p>
+
+
+
+               <div class="row">
+                   <div class="col-md-lg">
+                      <div class="d-flex justify-content-end  " style="margin-bottom: 50px;">
+                         <button class="btn btn-default " (click)="cancelar()" type="button " height="40px;"
+                            style="background-color: rgb(110, 109, 109); color:white; margin-right: 20px;">Cancelar</button>
+                         <button class="btn  " style="background-color: brown; color:white;">Guardar</button>
+ 
+                      </div>
+                   </div>
+            </div>
+         </div>
+
+         
+
+      
+
+
+      
+      </div>
+   </form>
+</div>
+</div>
+</div>
+
+</section>
+</body>
+  <app-footer></app-footer>

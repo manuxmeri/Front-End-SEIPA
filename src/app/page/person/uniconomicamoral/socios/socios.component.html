@@ -1,0 +1,197 @@
+<app-header></app-header>
+
+<div class="d-flex justify-content-between " style="margin-top:20px;  margin-left:20px;">
+    <div class="d-flex">
+        <i class="bi bi-house-door" style="font-size: 22px;"></i>
+        <i class="bi bi-chevron-right" style="font-size: 22px;"></i>
+        <p style="font-family: 'Montserrat';font-size: 22px; ">Solicitudes</p>
+        <i class="bi bi-chevron-right" style="font-size: 22px;"></i>
+        <p style="font-family: 'Montserrat';font-size: 22px; ">Unidad Economica</p>
+        <i class="bi bi-chevron-right" style="font-size: 22px;"></i>
+        <p style="font-family: 'Montserrat';font-size: 22px; ">Persona Moral</p>
+
+    </div>
+    <a href="#" style="font-family: 'Montserrat';font-size: 22px; color:blue; margin-right:15px;">Manual de usuario</a>
+
+</div>
+
+<section class="container ">
+
+    <div class="textosolicitud " style=" font-family: 'Montserrat'; margin-top:30px;">
+    </div>
+
+
+    <div *ngFor="let formGroup of forms; let i = index">
+        <div class="textosolicitud" style="font-family: 'Montserrat'; margin-top:30px;">
+            <p style="font-size: 50px;"><strong>SOCIO {{ i + 1 }}</strong></p>
+            <div class="borderso text-center"></div>
+        </div>
+        <div class="borderso text-center"></div>
+        <form class="row formularyborder" [formGroup]="formGroup" (submit)="enviar()" ngNativeValidate>
+            <div class="row formularyborder">
+
+                <div class="row">
+
+                    <div class="col-md-4 marginput">
+                        <div class="form-group">
+                            <label class="control-label textoInput">UEPAMid:</label>
+                            <select class="form-select required" id="" name="UEPAMid" formControlName="UEPAMid"
+                                #UEPAMid>
+                                <option *ngFor="let moral of UniMoral" [value]="moral.id">{{ moral.RazonSocial}}
+                                </option>
+                            </select>
+                            <p class="vacio" id=""></p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 marginput">
+                        <div class="form-group">
+                            <label class="control-label textoInput">CURP:</label>
+                            <input formControlName="CURP" type="text" formControlName="CURP" required maxlength="18"
+                                onkeypress="return (event.charCode >= 48 && event.charCode <= 57) ||  ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122))"
+                                class="form-control required" style="text-transform: uppercase;">
+                            <p class="vacio" id=""></p>
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-1 marginput "></div>
+                    <div class="col-md-3 marginput ">
+                        <div class="form-group">
+                    <div>
+                        <p class="control-label textoInput">TIPO:
+                        <p>
+                    </div>
+
+                    <div>
+                        <div class="form-check form-check-inline ">
+                            <input class="form-check-input" type="checkbox" id="actvPesca" formControlName="ActvPesca" > 
+                            <label class="form-check-label" for="ActvPesca" >
+                                ACUACULTOR
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline ">
+                            <input class="form-check-input" type="checkbox" id="actvAcuacultura"
+                                formControlName="ActvAcuacultura">
+                            <label class="form-check-label" for="ActvAcuacultura">
+                                PESQUERO
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                  
+                  
+                    <div class="form-group ">
+                        <strong > <p style=" font-family: 'Montserrat'; font-size: 18px; margin-bottom: 10px;">IMPORTAR DOCUMENTOS</p></strong>
+                         
+                        <table class=" table  "
+                        style="font-family: 'Montserrat'; font-size:16px; border:solid 1px black">
+                       
+                        <thead class="text-center">
+                           
+                           <tr >
+                             
+                              
+                              <th scope="col"  style="background-color: #7B1E34;  color: white;">DOCUMENTO</th>
+                              <th scope="col" style="background-color: #7B1E34;  color: white;">ARCHIVO</th>
+                           </tr>
+                        </thead>
+                        <tbody class="text-center" >
+                           <tr >
+                              <td >Acta de nacimiento</td>
+                              <td>
+                               
+                                    
+                  
+                                    
+                                     <label for="pdfFile" class="custom-input custom-button">
+                                       <i class="bi bi-folder-plus"></i> Subir PDF
+                                    </label> 
+                                       <input class="form-control required input " type="file" accept=".pdf" class="file-input" id="" name="" formControlName="DocActaNacimiento"
+                                     required>
+                                  
+                                
+                              
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>Comprobante de domicilio</td>
+                              <td>
+                                
+                                    <label for="pdfFile" class="custom-input custom-button">
+                                       <i class="bi bi-folder-plus"></i> Subir PDF
+                                   </label> 
+                                   
+                                    <input class="form-control required input"  type="file"   accept=".pdf" class="file-input" id="" name="" formControlName="DocComprobanteDomicilio"
+                                  required>
+                               
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>Curp</td>
+                              <td>
+                                
+                                    <label for="pdfFile" class="custom-input custom-button">
+                                       <i class="bi bi-folder-plus"></i> Subir PDF
+                                   </label> 
+                                   <input class="form-control required input"  type="file"   accept=".pdf" class="file-input" id="" name="" formControlName="DocCURP"
+                                   required>
+                               
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>Identificación Oficial</td>
+                              <td>
+                                 
+                                    <label for="pdfFile" class="custom-input custom-button">
+                                       <i class="bi bi-folder-plus"></i> Subir PDF
+                                   </label> 
+                                   <input class="form-control required input"  type="file"   accept=".pdf" class="file-input" id="" name="" formControlName="DocIdentificacionOfc"
+                                   required>
+                                
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>RFC</td>
+                              <td>
+                               
+                                    <label for="pdfFile" class="custom-input custom-button">
+                                       <i class="bi bi-folder-plus"></i> Subir PDF
+                                   </label> 
+                                   <input class="form-control required input"  type="file"   accept=".pdf" class="file-input" id="" name="" formControlName="DocRFC"
+                                   required>
+                               
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                     </div>
+                   
+                    
+                  
+
+                    <!--PRUEBA-->
+                 
+
+                  
+
+                   
+
+                    <!--FIN PRUEBA-->
+
+
+                </div>
+            </div>
+
+        </form>
+    </div>
+    <button class="btn botones"
+        style="background-color: brown; color:white; width: 10%; height: 38%; margin-left: 90%; margin-bottom: 20px;"
+        (click)="enviar()">
+        Guardar
+    </button>
+
+</section>
+
+
+<app-footer></app-footer>

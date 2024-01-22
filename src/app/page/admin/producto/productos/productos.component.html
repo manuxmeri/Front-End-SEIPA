@@ -1,0 +1,141 @@
+<app-header></app-header>
+<div class="d-flex justify-content-between " style="margin-top:20px; margin-left:20px;" >
+   <div class="d-flex" >
+     <i class="bi bi-house-door" style="font-size: 22px;"></i>
+     <i class="bi bi-chevron-right" style="font-size: 22px;"></i>
+     <p style="font-family: 'Montserrat';font-size: 22px; " ><a href="panel" style="text-decoration:none">Panel</a></p>
+     <i class="bi bi-chevron-right" style="font-size: 22px;"></i>
+    <p style="font-family: 'Montserrat';font-size: 22px; "><a href="productos" style="text-decoration:none">Productos</a></p>
+    
+   </div>
+   <a href="#"   style="font-family: 'Montserrat';font-size: 22px; color:blue; margin-right:15px;">Manual de usuario</a>
+ 
+ </div>
+
+<section class="container">
+   <div class="textosolicitud " style=" font-family: 'Montserrat'; margin-top:30px; margin-bottom:30px;">
+      <p style=" font-size: 50px;"><strong>PRODUCTOS</strong></p>
+      <div>
+      </div>
+   </div>
+   <div class="order_boxes">
+      <div class="row">
+         <div class="col-lg-6 col-lx-4">
+            <div>
+               <table class="table" style="text-transform: uppercase;">
+                  <thead style="color:DarkCyan" class="text-center table-dark"  >
+                     <tr>
+                       <th scope="col" style="background-color: #7B1E34;"># </th>
+                       <th scope="col" style="background-color: #7B1E34;">Nombre común</th>
+                       <th scope="col" style="background-color: #7B1E34;">Nombre cientifico</th>
+                       <th scope="col" style="background-color: #7B1E34;">Opciones</th>
+                     </tr>
+                   </thead>
+                  <tr *ngFor="let producto of data ; let iControl = index">
+                     <td>{{producto.id}}</td>
+                     <td>{{producto.NombreComun}}</td>
+                     <td>{{producto.NombreCientifico}}</td>
+                     <td><a type="button" (click)="editar(producto.id)"><i class="bi bi-pen"></i></a>
+                        <a type="button" (click)="borrar(producto.id, iControl)"><i class="bi bi-trash" style="margin-left: 6%;"></i></a>
+                    </td>
+                  </tr>
+               </table>
+            </div>
+         </div>
+         <div class="col-lg-6 col-lx-4">
+            <div class="text-white p-1 text-center" style="background-color: #7B1E34">
+               AGREGAR PRODUCTO
+            </div>
+            <form class="row formularyborder" [formGroup]="FormProducto" (submit)="enviar()" ngNativeValidate>
+               <div class="row formularyborder">
+
+
+                  <div class="col-md-12 marginput">
+                     <div class="form-group">
+                        <label class="control-label textoInput">NOMBRE COMÚN:</label>
+                        <input formControlName="NombreComun" type="text" maxlength="50" required class="form-control required"
+                           style="text-transform: uppercase;">
+                           <div
+                           *ngIf="
+                           FormProducto.controls['NombreComun'].invalid &&
+                           (FormProducto.controls['NombreComun'].dirty || FormProducto.controls['NombreComun'].touched)
+                         ">
+                         <div *ngIf="FormProducto.controls['NombreComun'].errors">
+                           <label  class="control-label " for="" style="background-color: #eb0339; color:white; font-size:12px;"> <i class="bi bi-exclamation-circle-fill"></i> El nombre común es obligatorio</label>
+                         </div>
+                         
+                           </div>
+                        <p class="vacio" id=""></p>
+                     </div>
+                  </div>
+
+                  <div class="col-md-12 marginput">
+                     <div class="form-group">
+                        <label class="control-label textoInput">NOMBRE CIENTIFICO:</label>
+                        <input formControlName="NombreCientifico" type="text" maxlength="50" required class="form-control required"
+                           style="text-transform: uppercase;">
+                           <div
+                           *ngIf="
+                           FormProducto.controls['NombreCientifico'].invalid &&
+                           (FormProducto.controls['NombreCientifico'].dirty || FormProducto.controls['NombreCientifico'].touched)
+                         ">
+                         <div *ngIf="FormProducto.controls['NombreCientifico'].errors">
+                           <label  class="control-label " for="" style="background-color: #eb0339; color:white; font-size:12px;"> <i class="bi bi-exclamation-circle-fill"></i> El nombre cientifico es obligatorio</label>
+                         </div>
+                         
+                           </div>
+                        <p class="vacio" id=""></p>
+                     </div>
+                  </div>
+
+                  <div class="col-md-12 marginput ">
+                     <div class="form-group">
+                        <label class="control-label textoInput">TIPO DE ESPECIE:</label>
+                        <select class="form-select " id="" name="TPEspecieid" formControlName="TPEspecieid"
+                           #TPEspecieid>
+                           <option value="" >Selecciona una opción</option>
+                           <option *ngFor="let especie of especies" [value]="especie.id" style="text-transform: uppercase;">{{ especie.NombreEspecie}}
+                           </option>
+                        </select>
+                     </div>
+                     <div
+                     *ngIf="
+                     FormProducto.controls['TPEspecieid'].invalid &&
+                     (FormProducto.controls['TPEspecieid'].dirty || FormProducto.controls['TPEspecieid'].touched)
+                   ">
+                   <div *ngIf="FormProducto.controls['TPEspecieid'].errors">
+                     <label  class="control-label " for="" style="background-color: #eb0339; color:white; font-size:12px;"> <i class="bi bi-exclamation-circle-fill"></i> El tipo de especie es obligatorio</label>
+                   </div>
+                   
+                     </div>
+
+                     <p class="vacio" id=""></p>
+                     <div class="row">
+                        <div class="col-md-lg">
+                           <div class="d-flex justify-content-end  " style="margin-bottom: 50px;">
+                              <button class="btn btn-default " (click)="cancelar()" type="button " height="40px;"
+                                 style="background-color: rgb(110, 109, 109); color:white; margin-right: 20px;">Cancelar</button>
+                              <button class="btn  " style="background-color: brown; color:white;">Guardar</button>
+      
+                           </div>
+                        </div>
+                 </div>
+              </div>
+
+           
+
+
+           
+           </div>
+            </form>
+         </div>
+
+      </div>
+   </div>
+</section>
+
+
+
+
+
+<app-footer></app-footer>

@@ -1,0 +1,49 @@
+<app-header></app-header>
+
+<section class="container">
+    <form [formGroup]="formuLocalidad" (ngSubmit)="put()" ngNativeValidate>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Nombre de Localidad</label>
+            <input type="text" required class="form-control" formControlName="NombreLocalidad"
+            style="text-transform: uppercase;" [(ngModel)]="datosLocalidad.NombreLocalidad">
+        </div>
+        <div class="form-group">
+            <label class="control-label textoInput">Nombre del Municipio:</label>
+            <select class="form-select "  id="" name="Munid" formControlName="Munid" [(ngModel)]="datosLocalidad.Munid"
+               #Munid>
+               <option *ngFor="let municipio of municipios" [value]="municipio.id">{{municipio.NombreMunicipio}}
+               </option>
+            </select>
+         </div>
+        <div class="form-group">
+            <label class="control-label textoInput">Nombre del Distrito:</label>
+            <select class="form-select "  id="" name="Disid" formControlName="Disid" [(ngModel)]="datosLocalidad.Disid"
+               #Disid>
+               <option *ngFor="let distrito of distritos" [value]="distrito.id">{{ distrito.NombreDistrito}}
+               </option>
+            </select>
+         </div>
+         <div class="form-group">
+            <label class="control-label textoInput">Nombre de Regiones:</label>
+            <select class="form-select " id="" name="Regid" formControlName="Regid" [(ngModel)]="datosLocalidad.Regid"
+               #Regid>
+               <option *ngFor="let regione of regiones" [value]="regione.id">{{ regione.NombreRegion}}
+               </option>
+            </select>
+         </div>
+        <br>
+        <div class="row">
+            <div class="col-md-lg">
+                <div class="d-flex justify-content-end  " style="margin-bottom: 50px;">
+                    <button class="btn btn-default " type="button " height="40px;"
+                        style="background-color: rgb(110, 109, 109); color:white; margin-right: 20px;">Cancelar</button>
+                    <button class="btn  " style="background-color: brown; color:white;">Guardar</button>
+
+                </div>
+            </div>
+        </div>
+
+
+    </form>
+</section>
+<app-footer></app-footer>

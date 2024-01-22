@@ -1,0 +1,34 @@
+<app-header></app-header>
+<body>
+    
+
+<section class="container" style="margin-top: 50px;">
+<h1 > Lista de oficinas</h1>
+
+<table class="table">
+    <thead style="color:DarkCyan" class="text-center" >
+      <tr>
+        <th scope="col">Nombre </th>
+        <th scope="col">Ubicacion</th>
+        <th scope="col">Telefono</th>
+        <th scope="col">Email</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <tr *ngFor="let ofi of data ; let iControl = index">
+        <td>{{ofi.NombreOficina}}</td>
+        <td>{{ofi.Ubicacion}}</td>
+        <td>{{ofi.Telefono}}</td>
+        <td>{{ofi.Email}}</td>
+        <td><a type="button" (click)="editar(ofi.id)"><i class="bi bi-pen"></i></a>
+            <a type="button" (click)="borrar(ofi.id, iControl)"><i class="bi bi-trash" style="margin-left: 6%;"></i></a>
+        </td>
+        
+       
+      </tr>
+    </tbody>
+  </table>
+
+</section>
+</body>
+  <app-footer></app-footer>

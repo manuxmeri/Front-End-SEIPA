@@ -1,0 +1,490 @@
+<app-header></app-header>
+
+<div class="d-flex justify-content-between " style="margin-top:20px;  margin-left: 8%">
+    <div class="d-flex">
+        <i class="bi bi-house-door" style="font-size: 22px;"></i>
+        <i class="bi bi-chevron-right" style="font-size: 22px;"></i>
+        <p style="font-family: 'Montserrat';font-size: 22px; ">Solicitudes</p>
+        <i class="bi bi-chevron-right" style="font-size: 22px;"></i>
+        <p style="font-family: 'Montserrat';font-size: 22px; ">Unidad Economica Fisisca</p>
+
+    </div>
+    <a href="#" style="font-family: 'Montserrat';font-size: 22px; color:blue; margin-right:15px;">Manual de usuario</a>
+
+</div>
+
+<section class="container ">
+
+    <div class="textosolicitud " style=" font-family: 'Montserrat'; margin-top:30px; ">
+        <p style=" font-size: 50px;"><strong>UNIDAD ECONOMICA</strong></p>
+        <div>
+            <p style=" font-family: 'Montserrat'; font-size: 35px; margin-top:35px; color:rgb(87, 86, 85)">
+                <strong>Oficina
+                    de registro</strong>
+            <p>
+        </div>
+    </div>
+    <div class="textosolicitud " style=" font-family: 'Montserrat'; margin-top:30px;">
+
+        <div>
+
+        </div>
+    </div>
+
+    <div class="borderso text-center"></div>
+    <div>
+        <form [formGroup]="formUnid" (ngSubmit)="put()" ngNativeValidate>
+            <div class="row formularyborder">
+                <div class="col-md-4 marginput ">
+                    <div class="form-group">
+                        <label class="control-label textoInput">OFICINA:</label>
+                        <select class="form-select" id="" name="Ofcid" formControlName="Ofcid"
+                            [(ngModel)]="datosUnidadF.Ofcid">
+                            <option *ngFor="let oficina of oficinas" [value]="oficina.id"
+                                [selected]="oficina.id === datosUnidadF.Ofcid">
+                                {{ oficina.NombreOficina }}
+                            </option>
+                        </select>
+
+                    </div>
+
+
+                    <p class="vacio" id=""></p>
+                </div>
+                <div class="col-md-4 marginput">
+                    <div class="form-group">
+                        <label class="control-label textoInput">FECHA:</label>
+                        <input class="form-control " id="" name="" formControlName="FechaRegistro"
+                            [(ngModel)]="datosUnidadF.FechaRegistro" type="date">
+                        <p class="vacio" id=""></p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 marginput">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                        <label class="control-label textoInput">CAPTURAR RNPA:</label>
+                    </div>
+                    <input class="form-control " id="" name="" formControlName="RNPA" [(ngModel)]="datosUnidadF.RNPA"
+                        type="text">
+                    <p class="vacio" id=""></p>
+                </div>
+
+
+
+
+                <div>
+                    <p style=" font-family: 'Montserrat'; font-size: 35px; margin-top:35px; color:rgb(87, 86, 85)">
+                        <strong>Datos
+                            generales</strong>
+                    <p>
+                    <div class="borderso text-center"></div>
+
+                </div>
+
+                <div class="col-md-4 marginput">
+                    <div class="form-group">
+                        <label class="control-label textoInput">CORREO ELECTRONICO:</label>
+                        <input class="form-control " id="" name="" formControlName="Email"
+                            [(ngModel)]="datosUnidadF.Email" type="text">
+                        <p class="vacio" id=""></p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 marginput">
+                    <div class="form-group">
+                        <label class="control-label textoInput">CURP:</label>
+                        <input formControlName="CURP" [(ngModel)]="datosUnidadF.CURP" type="text"
+                            onkeypress="return (event.charCode >= 48 && event.charCode <= 57) ||  ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122))"
+                            class="form-control " style="text-transform: uppercase;">
+                        <p class="vacio" id=""></p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 marginput">
+                    <div class="form-group">
+                        <label class="control-label textoInput">RFC:</label>
+                        <input class="form-control " id="" name="" formControlName="RFC" [(ngModel)]="datosUnidadF.RFC"
+                            type="text">
+                        <p class="vacio" id=""></p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 marginput">
+                    <div class="form-group">
+                        <label class="control-label textoInput">NOMBRES(S):</label>
+                        <input class="form-control " id="" name="" formControlName="Nombres"
+                            [(ngModel)]="datosUnidadF.Nombres" type="text">
+                        <p class="vacio" id=""></p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 marginput">
+                    <div class="form-group">
+                        <label class="control-label textoInput">APELLIDO PATERNO:</label>
+                        <input class="form-control " id="" name="" formControlName="ApPaterno"
+                            [(ngModel)]="datosUnidadF.ApPaterno" type="text">
+                        <p class="vacio" id=""></p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 marginput">
+                    <div class="form-group">
+                        <label class="control-label textoInput">APELLIDO MATERNO:</label>
+                        <input class="form-control " id="" name="" formControlName="ApMaterno"
+                            [(ngModel)]="datosUnidadF.ApMaterno" type="text">
+                        <p class="vacio" id=""></p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 marginput">
+                    <div class="form-group">
+                        <label class="control-label textoInput">FECHA DE NACIMIENTO:</label>
+                        <input class="form-control " id="" name="" formControlName="FechaNacimiento"
+                            [(ngModel)]="datosUnidadF.FechaNacimiento" type="date">
+                        <p class="vacio" id=""></p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 marginput">
+                    <div class="form-group">
+                        <label class="control-label textoInput">SEXO:</label>
+                        <select class="form-select " id="" name="" formControlName="Sexo"
+                            [(ngModel)]="datosUnidadF.Sexo">
+                            <option selected>Selecciona una opción</option>
+                            <option value="F">F</option>
+                            <option value="M">M</option>
+                        </select>
+                        <p class="vacio" id=""></p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 marginput">
+                    <div class="form-group">
+                        <label class="control-label textoInput">GRUPO SANGUINEO:</label>
+                        <input class="form-control " id="" name="" formControlName="GrupoSanguineo"
+                            [(ngModel)]="datosUnidadF.GrupoSanguineo" type="text">
+                        <p class="vacio" id=""></p>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+
+
+            <div class="textosolicitud formularyborder " style=" font-family: 'Montserrat'; margin-top:30px;">
+
+                <div>
+                    <p style=" font-family: 'Montserrat'; font-size: 35px; margin-top:35px; color:rgb(87, 86, 85)">
+                        <strong>DOMICILIO</strong>
+                    <p>
+                </div>
+            </div>
+
+
+
+
+            <div class="borderso text-center"></div>
+
+
+
+
+            <div class="row">
+
+                <div class="col-md-12 marginput">
+                    <div class="form-group">
+                        <label class="control-label textoInput">CALLE:</label>
+                        <input class="form-control " id="" name="" formControlName="Calle"
+                            [(ngModel)]="datosUnidadF.Calle" type="text">
+                        <p class="vacio" id=""></p>
+                    </div>
+                </div>
+                <div class="col-md-4 marginput">
+                    <div class="form-group">
+                        <label class="control-label textoInput">NUMERO EXTERIOR<span id="">*</span>:</label>
+                        <input class="form-control " id="" Name="" formControlName="NmExterior"
+                            [(ngModel)]="datosUnidadF.NmExterior" type="text">
+                        <p class="vacio" id=""></p>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4 marginput">
+                    <div class="form-group">
+                        <label class="control-label textoInput">NUMERO INTERIOR<span id="">*</span>:</label>
+                        <input class="form-control " id="" name="" formControlName="NmInterior"
+                            [(ngModel)]="datosUnidadF.NmInterior" type="text">
+                        <p class="vacio" id=""></p>
+                    </div>
+                </div>
+
+
+
+
+                <div class="col-md-4 marginput">
+                    <div class="form-group">
+                        <label class="control-label textoInput">CODIGO POSTAL<span id="">*</span>:</label>
+                        <input class="form-control " id="" name="" formControlName="CodigoPostal"
+                            [(ngModel)]="datosUnidadF.CodigoPostal" type="text">
+                        <p class="vacio" id=""></p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 marginput">
+                    <div class="form-group">
+                        <label class="control-label textoInput">LOCALIDAD:</label>
+                        <select class="form-select " id="" name="Locid" formControlName="Locid"
+                            [(ngModel)]="datosUnidadF.Locid">
+                            <option *ngFor="let localidad of localidades" [value]="localidad.id">{{
+                                localidad.NombreLocalidad}}</option>
+                        </select>
+                        <p class="vacio" id=""></p>
+                    </div>
+                </div>
+                <!--
+
+               <div class="col-md-4 marginput">
+                  <div class="form-group">
+                     <label class="control-label textoInput">MUNICIPIO:</label>
+                     <select class="form-select " id="" name="">
+                        <option value="0">Selecciona una opción</option>
+                        <option *ngFor="let mun of municipios">{{ mun.NombreMunicipio }}</option>
+                     </select>
+                     <p class="vacio" id=""></p>
+                  </div>
+               </div>
+               <div class="col-md-4 marginput">
+                  <div class="form-group">
+                     <label class="control-label textoInput">DISTRITO:</label>
+                     <select class="form-select " id="" name="">
+                        <option value="0">Selecciona una opción</option>
+                        <option value="1">Persona fisica</option>
+                     </select>
+                     <p class="vacio" id=""></p>
+                  </div>
+               </div>
+               <div class="col-md-4 marginput">
+                  <div class="form-group">
+                     <label class="control-label textoInput">REGIÓN:</label>
+                     <select class="form-select " id="" name="">
+                        <option value="0">Selecciona una opción</option>
+                        <option value="1">Persona fisica</option>
+                     </select>
+                     <p class="vacio" id=""></p>
+                  </div>
+               </div>
+               <div class="col-md-4 marginput">
+                  <div class="form-group">
+                     <label class="control-label textoInput">TELEFONO<span id="">*</span>:</label>
+                     <input class="form-control " id="" name="" type="text">
+                     <p class="vacio" id=""></p>
+                  </div>
+               </div>
+               
+               <div class="col-md-4 marginput">
+                  <div class="form-group">
+                     <label class="control-label textoInput">TIPO:</label>
+                     <select class="form-select " id="" name="">
+                        <option value="0">Selecciona una opción</option>
+                        <option value="1">Persona fisica</option>
+                        <option value="2">Persona moral</option>
+                        <option value="3">Ambas</option>
+                     </select>
+                     <p class="vacio" id=""></p>
+                  </div>
+               </div>
+            -->
+
+
+
+
+
+
+            </div>
+            <div class="d-flex justify-content-end  " style="margin-top:20px;  ">
+                <div class="d-flex text-center col-md-8">
+                    <table class=" table  text-center "
+                        style="  margin-top:50px; margin-bottom: 80px; font-family: 'Montserrat'; font-size:17px; border:solid 1px rgb(179, 176, 176)">
+                        <thead>
+                            <tr>
+                                <th class="fondotabla" scope="col">Telefono</th>
+                                <th class="fondotabla" scope="col">Tipo</th>
+                                <th class="fondotabla" scope="col">Principal</th>
+                                <th class="fondotabla" scope="col">Opción</th>
+
+                            </tr>
+                        </thead>
+                        <tbody style="border:solid 1px rgb(122, 122, 122); " class="text-center">
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+
+
+                                <td><a href=""><i class="bi bi-check2-all"></i></a>
+                                    <a href=""><i class="bi bi-file-earmark-post" style="margin-left: 6%;"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Jacob</td>
+                                <td>Otto</td>
+
+                                <td><a href=""><i class="bi bi-check2-all"></i></a>
+                                    <a href=""><i class="bi bi-file-earmark-post" style="margin-left: 6%;"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>Larry</td>
+                                <td>Otto</td>
+
+                                <td><a href=""><i class="bi bi-check2-all"></i></a>
+                                    <a href=""><i class="bi bi-file-earmark-post" style="margin-left: 6%;"></i></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+
+
+            <div>
+                <p style=" font-family: 'Montserrat'; font-size: 35px;  color:rgb(87, 86, 85)"><strong>Detalle</strong>
+                <p>
+            </div>
+
+            <div class="borderso text-center"></div>
+
+
+
+            <div class="row">
+
+
+
+                <div class="col-md-4 marginput">
+                    <div class="form-group">
+                        <label class="control-label textoInput">FECHA DE OPERACIONES</label>
+                        <input class="form-control  input" id="" name="" formControlName="IniOperaciones"
+                            [(ngModel)]="datosUnidadF.IniOperaciones" type="date">
+                        <p class="vacio" id=""></p>
+                    </div>
+                </div>
+                <div>
+                    <p class="textoInput">
+                        <strong>ACTIVIDAD PESQUERA:</strong>
+                    <p>
+                </div>
+
+                <div>
+                    <div class="form-check form-check-inline col-md-4">
+                        <input class="form-check-input" type="checkbox" id="activoEmbMayor"
+                            formControlName="ActvAcuacultura">
+                        <label class="form-check-label" for="ActvAcuacultura">
+                            ACTIVIDAD ACUACULTURA
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline col-md-4">
+                        <input class="form-check-input" type="checkbox" id="ActvPesca" formControlName="ActvPesca">
+                        <label class="form-check-label" for="ActvPesca">
+                            ACTIVIDAD PESQUERA
+                        </label>
+                    </div>
+                </div>
+
+                <!--PRUEBA-->
+                <div class="col-md-4 marginput">
+                    <div class="form-group">
+                        <label class="control-label textoInput">DocActaNacimiento</label>
+                        <input class="form-control  input" id="" name="" formControlName="DocActaNacimiento"
+                            [(ngModel)]="datosUnidadF.DocActaNacimiento" type="text">
+                        <p class="vacio" id=""></p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 marginput">
+                    <div class="form-group">
+                        <label class="control-label textoInput">DocComprobanteDomicilio</label>
+                        <input class="form-control  input" id="" name="" formControlName="DocComprobanteDomicilio"
+                            [(ngModel)]="datosUnidadF.DocComprobanteDomicilio" type="text">
+                        <p class="vacio" id=""></p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 marginput">
+                    <div class="form-group">
+                        <label class="control-label textoInput">DocCURP</label>
+                        <input class="form-control  input" id="" name="" formControlName="DocCURP"
+                            [(ngModel)]="datosUnidadF.DocCURP" type="text">
+                        <p class="vacio" id=""></p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 marginput">
+                    <div class="form-group">
+                        <label class="control-label textoInput">DocIdentificacionOfc</label>
+                        <input class="form-control  input" id="" name="" formControlName="DocIdentificacionOfc"
+                            [(ngModel)]="datosUnidadF.DocIdentificacionOfc" type="text">
+                        <p class="vacio" id=""></p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 marginput">
+                    <div class="form-group">
+                        <label class="control-label textoInput">DocRFC</label>
+                        <input class="form-control  input" id="" name="" formControlName="DocRFC"
+                            [(ngModel)]="datosUnidadF.DocRFC" type="text">
+                        <p class="vacio" id=""></p>
+                    </div>
+                </div>
+                <!--FIN PRUEBA-->
+
+                <div>
+                    <p class="textoInput">
+                        <strong>ACTIVOS:</strong>
+                    <p>
+                </div>
+
+                <div>
+                    <div class="form-check form-check-inline col-md-4">
+                        <input class="form-check-input" type="checkbox" id="ActivoEmbMayor"
+                            formControlName="ActivoEmbMayor">
+                        <label class="form-check-label" for="activoEmbMayor">
+                            EMBARCACIONES MAYORES
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline col-md-4">
+                        <input class="form-check-input" type="checkbox" id="activoEmbMenor"
+                            formControlName="ActivoEmbMenor">
+                        <label class="form-check-label" for="activoEmbMenor">
+                            EMBARCACIONES MENORES
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="pull-left">
+                        <p class="top_10">* Campos obligatorios</p>
+                    </div>
+                    <div class="d-flex justify-content-end  " style="margin-bottom: 50px;">
+                        <button class="btn btn-default botones" (click)="cancelar()" height="40px;"
+                            style="background-color: rgb(110, 109, 109); color:white;">Cancelar</button>
+                        <button class="btn botones" style="background-color: brown; color:white;">Guardar</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+
+
+
+
+<app-footer></app-footer>

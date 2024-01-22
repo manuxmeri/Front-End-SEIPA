@@ -1,0 +1,103 @@
+
+.form{
+padding-top: 10px;
+padding-bottom: 20px;
+padding-left: 40px;
+
+}
+.sesion{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.container{
+    margin-top: 40px;
+    margin-bottom: 40px;  
+}
+.form2{
+    padding-top: 40px;
+    padding-bottom: 20px;
+    padding-left: 40px;
+
+    }
+
+.boton{
+    padding-left: 85%;
+ 
+}
+.label{
+   
+    border: red 5px solid;
+
+}
+
+.formulario{
+    width: 60%;
+}
+
+.grandlent-custom{
+    background: #ebebeb;
+}
+.intro{
+    margin-top: 5px;
+    
+    margin-bottom: 10px;
+}
+
+.borderso{
+    border-top: solid 1px rgb(199, 199, 199);
+}
+.bottonso{
+    margin-top: 50px;
+    margin-left: 50px;
+    height: 69px;
+    width: 200px;
+    font-size: 25px;
+    border:solid 2px rgb(133, 5, 5);
+}
+i:hover{
+    color:#ffffff !important;
+    
+    }
+    
+.textosolicitud{
+    margin-bottom: 40px;
+    margin-left: 60px;
+}
+.textonormal{
+    font-size: 25px;
+}
+.botonformulario{
+    border:solid #920b0b;
+    width: 10px;
+    height: 10px;
+
+
+}
+.form-select{
+    width: 250px;
+    height: 60px;
+
+}
+.button {
+    background-color: #691831;
+    border: none;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    margin-left: 30px;
+    font-family: 'Montserrat';
+    font-size: 20px;
+}
+
+.button1 {
+    background-color: white;
+    color: black;
+    border: 2px solid #691831;
+}
+
+.button1:hover {
+    background-color: #691831;
+    color: white;
+}

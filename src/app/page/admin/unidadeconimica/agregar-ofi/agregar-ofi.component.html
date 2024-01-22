@@ -1,0 +1,110 @@
+<app-header></app-header>
+
+
+<section class="container ">
+
+    <div class="d-flex justify-content-between " style="margin-top:20px;">
+        <div class="d-flex">
+            <i class="bi bi-house-door" style="font-size: 25px;"></i>
+            <i class="bi bi-chevron-right" style="font-size: 25px;"></i>
+            <p style="font-family: 'Montserrat';font-size: 25px; ">Solicitudes</p>
+            <i class="bi bi-chevron-right" style="font-size: 25px;"></i>
+            <p style="font-family: 'Montserrat';font-size: 25px; ">Unidad Economica</p>
+            <i class="bi bi-chevron-right" style="font-size: 25px;"></i>
+            <p style="font-family: 'Montserrat';font-size: 25px; ">Agregar Oficina</p>
+
+        </div>
+        <a href="#" style="font-family: 'Montserrat';font-size: 25px; color:blue; margin-right:15px;">Manual de
+            usuario</a>
+
+    </div>
+
+    <div class="textosolicitud " style=" font-family: 'Montserrat'; margin-top:30px; ">
+        <p style=" font-size: 50px;"><strong>UNIDAD ECONOMICA</strong></p>
+        <div>
+            <p style=" font-family: 'Montserrat'; font-size: 35px; margin-top:35px; color:rgb(87, 86, 85)">
+                <strong>Agregar Oficina</strong>
+            <p>
+        </div>
+    </div>
+    <div class="textosolicitud " style=" font-family: 'Montserrat'; margin-top:30px;">
+
+        <div>
+
+        </div>
+    </div>
+    <div class="borderso text-center"></div>
+    
+    <div class="row formularyborder" style="margin-top: 50px;">
+        <form class="row formularyborder" action="" [formGroup]="FormOfi" (submit)="enviar()" ngNativeValidate>
+    
+            
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="control-label textoInput">Nombre:</label>
+                <input class="form-control required" id="" formControlName="NombreOficina" type="text" required>
+                <p class="vacio" id=""></p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="control-label textoInput">Ubicacion:</label>
+                <input class="form-control required" id="" formControlName="Ubicacion" type="text">
+                <p class="vacio" id=""></p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="control-label textoInput">Telefono:</label>
+                <input class="form-control required" id="" formControlName="Telefono" type="text" required>
+                <p class="vacio" id=""></p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="control-label textoInput">Email:</label>
+                <input class="form-control required" id="" formControlName="Email" type="text" required>
+                <p class="vacio" id=""></p>
+            </div>
+        </div>
+        <button class="btn  botones" style="background-color: brown; color:white;">Guardar</button>
+    </form>
+    </div>
+
+    <div class="textosolicitud " style=" font-family: 'Montserrat'; ">
+        <div>
+            <p style=" font-family: 'Montserrat'; font-size: 35px;  color:rgb(87, 86, 85)">
+                <strong>Registro de Oficina</strong>
+            <p>
+        </div>
+    </div>
+    <div class="borderso text-center"></div>
+
+    <table class=" table table-striped text-center"
+    style=" margin-top:50px; margin-bottom: 80px; font-family: 'Montserrat'; font-size:17px; border:double rgb(179, 176, 176)">
+    <thead>
+      <tr>
+        <th scope="col">Nombre </th>
+        <th scope="col">Ubicacion</th>
+        <th scope="col">Telefono</th>
+        <th scope="col">Email</th>
+        <th scope="col">Opciones</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+        <tr *ngFor="let ofi of data ; let iControl = index">
+            <td>{{ofi.NombreOficina}}</td>
+            <td>{{ofi.Ubicacion}}</td>
+            <td>{{ofi.Telefono}}</td>
+            <td>{{ofi.Email}}</td>
+            <td><a type="button" (click)="editar(ofi.id)"><i class="bi bi-pen"></i></a>
+                <a type="button" (click)="borrar(ofi.id, iControl)"><i class="bi bi-trash" style="margin-left: 6%;"></i></a>
+            </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<app-footer></app-footer>

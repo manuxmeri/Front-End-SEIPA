@@ -1,0 +1,36 @@
+<app-header></app-header>
+<div class="d-flex justify-content-between " style="margin-top:20px; margin-left:20px;" >
+   <div class="d-flex" >
+     <i class="bi bi-house-door" style="font-size: 22px;"></i>
+     <i class="bi bi-chevron-right" style="font-size: 22px;"></i>
+     <p style="font-family: 'Montserrat';font-size: 22px; " ><a href="panel" style="text-decoration:none">Panel</a></p>
+     <i class="bi bi-chevron-right" style="font-size: 22px;"></i>
+    <p style="font-family: 'Montserrat';font-size: 22px; "><a href="especies" style="text-decoration:none">Especies</a></p>
+    
+   </div>
+   <a href="#"   style="font-family: 'Montserrat';font-size: 22px; color:blue; margin-right:15px;">Manual de usuario</a>
+ 
+ </div>
+
+<section class="container">
+<form [formGroup]="formuEsp" (ngSubmit)="put()" ngNativeValidate>
+    <div class="form-group">
+        <label for="">Nombre de la especie</label>
+        <input type="text" style="text-transform: uppercase;" class="form-control" formControlName="NombreEspecie"  [(ngModel)]="datosEspecie.NombreEspecie" >
+</div>
+      <br>
+      <div class="row">
+        <div class="col-md-lg">
+           <div class="d-flex justify-content-end" style="margin-bottom: 50px;">
+              <button class="btn btn-default "  type="button " height="40px;"
+                 style="background-color: rgb(110, 109, 109); color:white; margin-right: 20px;">Cancelar</button>
+              <button class="btn" style="background-color: brown; color:white;">Guardar</button>
+
+           </div>
+        </div>
+ </div>
+
+
+  </form>
+</section>
+<app-footer></app-footer>

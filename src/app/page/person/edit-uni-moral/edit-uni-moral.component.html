@@ -1,0 +1,393 @@
+<app-header></app-header>
+
+<div class="d-flex justify-content-between " style="margin-top:20px;  margin-left: 8%">
+   <div class="d-flex">
+      <i class="bi bi-house-door" style="font-size: 22px;"></i>
+      <i class="bi bi-chevron-right" style="font-size: 22px;"></i>
+      <p style="font-family: 'Montserrat';font-size: 22px; ">Solicitudes</p>
+      <i class="bi bi-chevron-right" style="font-size: 22px;"></i>
+      <p style="font-family: 'Montserrat';font-size: 22px; ">Unidad Economica</p>
+      <i class="bi bi-chevron-right" style="font-size: 22px;"></i>
+      <p style="font-family: 'Montserrat';font-size: 22px; ">Persona Moral</p>
+
+   </div>
+   <a href="#" style="font-family: 'Montserrat';font-size: 22px; color:blue; margin-right:15px;">Manual de usuario</a>
+
+</div>
+
+<section class="container ">
+
+   <div class="textosolicitud " style=" font-family: 'Montserrat'; margin-top:30px; ">
+      <p style=" font-size: 50px;"><strong>UNIDAD ECONOMICA</strong></p>
+      <div>
+         <p style=" font-family: 'Montserrat'; font-size: 35px; margin-top:35px; color:rgb(87, 86, 85)"><strong>Oficina
+               de registro</strong>
+         <p>
+      </div>
+   </div>
+   <div class="textosolicitud " style=" font-family: 'Montserrat'; margin-top:30px;">
+
+      <div>
+
+      </div>
+   </div>
+
+   <div class="borderso text-center"></div>
+   <div>
+      <form class="row formularyborder" [formGroup]="FormUniMoral" (ngSubmit)="put()" ngNativeValidate>
+         <div class="row formularyborder">
+
+            <div class="col-md-4 marginput ">
+               <div class="form-group">
+                  <label class="control-label textoInput">OFICINA:</label>
+                  <select class="form-select " id="" name="Ofcid" formControlName="Ofcid"  [(ngModel)]="datosUnidadM.Ofcid">
+                     <option *ngFor="let oficina of oficinas" [value]="oficina.id">{{ oficina.NombreOficina}}</option>
+                  </select>
+               </div>
+
+               <p class="vacio" id=""></p>
+            </div>
+
+            <div class="col-md-4 marginput">
+               <div class="form-group">
+                  <label class="control-label textoInput">FECHA:</label>
+                  <input class="form-control required" id="" name="" formControlName="FechaRegistro" type="date" [(ngModel)]="datosUnidadM.FechaRegistro"
+                     required>
+                  <p class="vacio" id=""></p>
+               </div>
+            </div>
+
+            <div class="col-md-4 marginput">
+               <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                  <label class="control-label textoInput">CAPTURAR RNPA:</label>
+               </div>
+               <input class="form-control required" id="" name="" formControlName="RNPA" type="text"
+                  style="text-transform: uppercase;" maxlength="10" required [(ngModel)]="datosUnidadM.RNPA">
+               <p class="vacio" id=""></p>
+            </div>
+
+            <div class="col-md-12 marginput">
+               <div class="form-group">
+                  <label class="control-label textoInput">UNIDAD ECONOMICA DUEÑA:</label>
+                  <select class="form-select " id="" name="UEDuenoid" formControlName="UEDuenoid" [(ngModel)]="datosUnidadM.UEDuenoid">
+                     <option *ngFor="let dueno of Dueno" [value]="dueno.id">{{ dueno.Nombres}} {{ dueno.ApPaterno}} {{
+                        dueno.ApMaterno}}</option>
+                  </select>
+               </div>
+
+               <p class="vacio" id=""></p>
+            </div>
+
+            <div>
+               <p style=" font-family: 'Montserrat'; font-size: 35px; margin-top:35px; color:rgb(87, 86, 85)">
+                  <strong>Datos
+                     generales</strong>
+               <p>
+               <div class="borderso text-center"></div>
+
+            </div>
+
+            <div class="col-md-4 marginput">
+               <div class="form-group">
+                  <label class="control-label textoInput">RAZÓN SOCIAL:</label>
+                  <input class="form-control required" id="" name="" formControlName="RazonSocial" type="text" [(ngModel)]="datosUnidadM.RazonSocial"
+                     style="text-transform: uppercase;" required>
+                  <p class="vacio" id=""></p>
+               </div>
+            </div>
+
+
+            <div class="col-md-4 marginput">
+               <div class="form-group">
+                  <label class="control-label textoInput">RFC:</label>
+                  <input class="form-control required" id="" name="" formControlName="RFC" type="text" [(ngModel)]="datosUnidadM.RFC"
+                     style="text-transform: uppercase;" maxlength="13" required>
+                  <p class="vacio" id=""></p>
+               </div>
+            </div>
+
+            <div class="col-md-4 marginput">
+               <div class="form-group">
+                  <label class="control-label textoInput">CORREO ELECTRONICO:</label>
+                  <input class="form-control required" id="" name="" formControlName="Email" type="text" [(ngModel)]="datosUnidadM.Email" required>
+                  <p class="vacio" id=""></p>
+               </div>
+            </div>
+
+            <div class="textosolicitud formularyborder " style=" font-family: 'Montserrat'; margin-top:30px;">
+
+               <div>
+                  <p style=" font-family: 'Montserrat'; font-size: 35px; margin-top:35px; color:rgb(87, 86, 85)">
+                     <strong>DOMICILIO</strong>
+                  <p>
+               </div>
+            </div>
+
+
+
+
+            <div class="borderso text-center"></div>
+
+
+
+
+            <div class="row">
+
+               <div class="col-md-12 marginput">
+                  <div class="form-group">
+                     <label class="control-label textoInput">CALLE:</label>
+                     <input class="form-control required" id="" name="" formControlName="Calle" type="text" [(ngModel)]="datosUnidadM.Calle"
+                        style="text-transform: uppercase;" required>
+                     <p class="vacio" id=""></p>
+                  </div>
+               </div>
+               <div class="col-md-4 marginput">
+                  <div class="form-group">
+                     <label class="control-label textoInput">NUMERO EXTERIOR<span id="">*</span>:</label>
+                     <input class="form-control required" id="" Name="" formControlName="NmExterior" type="text" [(ngModel)]="datosUnidadM.NmExterior"
+                        maxlength="6" required>
+                     <p class="vacio" id=""></p>
+                  </div>
+               </div>
+
+
+               <div class="col-md-4 marginput">
+                  <div class="form-group">
+                     <label class="control-label textoInput">NUMERO INTERIOR<span id="">*</span>:</label>
+                     <input class="form-control required" id="" name="" formControlName="NmInterior" type="text" [(ngModel)]="datosUnidadM.NmInterior"
+                        maxlength="6" required>
+                     <p class="vacio" id=""></p>
+                  </div>
+               </div>
+
+
+               <div class="col-md-4 marginput">
+                  <div class="form-group">
+                     <label class="control-label textoInput">CODIGO POSTAL<span id="">*</span>:</label>
+                     <input class="form-control required" id="" name="" formControlName="CodigoPostal" type="text" [(ngModel)]="datosUnidadM.CodigoPostal"
+                        maxlength="10" required>
+                     <p class="vacio" id=""></p>
+                  </div>
+               </div>
+
+               <div class="col-md-4 marginput">
+                  <div class="form-group">
+                     <label class="control-label textoInput">Localidad:</label>
+                     <select class="form-select " id="" name="Locid" formControlName="Locid" [(ngModel)]="datosUnidadM.Locid">
+                        <option *ngFor="let localidad of localidades" [value]="localidad.id">{{
+                           localidad.NombreLocalidad}}</option>
+                     </select>
+                     <p class="vacio" id=""></p>
+                  </div>
+               </div>
+
+               <div class="col-md-4 marginput">
+                  <div class="form-group">
+                     <label class="control-label textoInput">TELEFONO PRINCIPAL<span id="">*</span>:</label>
+                     <input class="form-control required" id="" name="NmPrincipal" formControlName="NmPrincipal" [(ngModel)]="datosUnidadM.NmPrincipal"
+                        type="text" maxlength="10">
+                     <p class="vacio" id=""></p>
+                  </div>
+               </div>
+
+               <div class="col-md-4 marginput">
+                  <div class="form-group">
+                     <label class="control-label textoInput">TIPO PRINCIPAL:</label>
+                     <select class="form-select required" id="" name="" formControlName="TpNmPrincipal" [(ngModel)]="datosUnidadM.TpNmPrincipal" required>
+                        <option selected>Selecciona una opción</option>
+                        <option value="CASA">CASA</option>
+                        <option value="MOVIL">MOVIL</option>
+                        <option value="OFICINA">OFICINA</option>
+                     </select>
+                     <p class="vacio" id=""></p>
+                  </div>
+               </div>
+
+               <div class="col-md-4 marginput">
+                  <div class="form-group">
+                     <label class="control-label textoInput">TELEFONO SECUNDARIO<span id="">*</span>:</label>
+                     <input class="form-control required" id="" name="NmSecundario" formControlName="NmSecundario" [(ngModel)]="datosUnidadM.NmSecundario"
+                        type="text" maxlength="10">
+                     <p class="vacio" id=""></p>
+                  </div>
+               </div>
+
+               <div class="col-md-4 marginput">
+                  <div class="form-group">
+                     <label class="control-label textoInput">TIPO SECUNDARIO:</label>
+                     <select class="form-select required" id="" name="" formControlName="TpNmSecundario" [(ngModel)]="datosUnidadM.TpNmSecundario" required>
+                        <option selected>Selecciona una opción</option>
+                        <option value="CASA">CASA</option>
+                        <option value="MOVIL">MOVIL</option>
+                        <option value="OFICINA">OFICINA</option>
+                     </select>
+                     <p class="vacio" id=""></p>
+                  </div>
+               </div>
+
+
+
+
+            </div>
+            <div class="d-flex justify-content-end  " style="margin-top:20px;  ">
+               <div class="d-flex text-center col-md-8">
+                  <table class=" table  text-center "
+                     style="  margin-top:50px; margin-bottom: 80px; font-family: 'Montserrat'; font-size:17px; border:solid 1px rgb(179, 176, 176)">
+                     <thead>
+                        <tr>
+                           <th class="fondotabla" scope="col">Telefono</th>
+                           <th class="fondotabla" scope="col">Tipo</th>
+                           <th class="fondotabla" scope="col">Principal</th>
+                           <th class="fondotabla" scope="col">Opción</th>
+
+                        </tr>
+                     </thead>
+                     <tbody style="border:solid 1px rgb(122, 122, 122); " class="text-center">
+                        <tr>
+                           <th scope="row">1</th>
+                           <td>Mark</td>
+                           <td>Otto</td>
+
+
+                           <td><a href=""><i class="bi bi-check2-all"></i></a>
+                              <a href=""><i class="bi bi-file-earmark-post" style="margin-left: 6%;"></i></a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th scope="row">2</th>
+                           <td>Jacob</td>
+                           <td>Otto</td>
+
+                           <td><a href=""><i class="bi bi-check2-all"></i></a>
+                              <a href=""><i class="bi bi-file-earmark-post" style="margin-left: 6%;"></i></a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th scope="row">3</th>
+                           <td>Larry</td>
+                           <td>Otto</td>
+
+                           <td><a href=""><i class="bi bi-check2-all"></i></a>
+                              <a href=""><i class="bi bi-file-earmark-post" style="margin-left: 6%;"></i></a>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+
+               </div>
+            </div>
+
+
+            <div>
+               <p style=" font-family: 'Montserrat'; font-size: 35px;  color:rgb(87, 86, 85)"><strong>Detalle</strong>
+               <p>
+            </div>
+
+            <div class="borderso text-center"></div>
+
+
+
+            <div class="row">
+
+
+               <div class="col-md-4 marginput">
+                  <div class="form-group">
+                     <label class="control-label textoInput">FECHA DE OPERACIONES</label>
+                     <input class="form-control required input" id="" name="" formControlName="IniOperaciones" [(ngModel)]="datosUnidadM.IniOperaciones"
+                        type="date" required>
+                     <p class="vacio" id=""></p>
+                  </div>
+               </div>
+
+               <div>
+                  <p class="control-label textoInput">ACTIVIDAD PESQUERA:
+                  <p>
+               </div>
+
+               <div>
+                  <div class="form-check form-check-inline col-md-4">
+                     <input class="form-check-input" type="checkbox" id="activoEmbMayor"
+                        formControlName="ActvAcuacultura">
+                     <label class="form-check-label" for="ActvAcuacultura">
+                        ACTIVIDAD ACUACULTURA
+                     </label>
+                  </div>
+                  <div class="form-check form-check-inline col-md-4">
+                     <input class="form-check-input" type="checkbox" id="ActvPesca" formControlName="ActvPesca">
+                     <label class="form-check-label" for="ActvPesca">
+                        ACTIVIDAD PESQUERA
+                     </label>
+                  </div>
+               </div>
+
+               <div class="col-md-4 marginput">
+                  <div class="form-group">
+                     <label class="control-label textoInput">CANTIDAD DE PESCADOR (ES)*:</label>
+                     <input class="form-control required input" id="" name="" type="number" [(ngModel)]="datosUnidadM.CantidadPescadores"
+                        formControlName="CantidadPescadores" required>
+                     <p class="vacio" id=""></p>
+                  </div>
+               </div>
+               <!--PRUEBA-->
+               <div class="col-md-4 marginput">
+                  <div class="form-group">
+                     <label class="control-label textoInput">DocRepresentanteLegal</label>
+                     <input class="form-control required input" id="" name="" formControlName="DocRepresentanteLegal" [(ngModel)]="datosUnidadM.DocRepresentanteLegal"
+                        type="text" required>
+                     <p class="vacio" id=""></p>
+                  </div>
+               </div>
+
+               <div class="col-md-4 marginput">
+                  <div class="form-group">
+                     <label class="control-label textoInput">DocActaConstitutiva</label>
+                     <input class="form-control required input" id="" name="" formControlName="DocActaConstitutiva" [(ngModel)]="datosUnidadM.DocActaConstitutiva"
+                        type="text" required>
+                     <p class="vacio" id=""></p>
+                  </div>
+               </div>
+
+               <div class="col-md-4 marginput">
+                  <div class="form-group">
+                     <label class="control-label textoInput">DocActaAsamblea</label>
+                     <input class="form-control required input" id="" name="" formControlName="DocActaAsamblea" [(ngModel)]="datosUnidadM.DocActaAsamblea"
+                        type="text" required>
+                     <p class="vacio" id=""></p>
+                  </div>
+               </div>
+               <!--FIN PRUEBA-->
+
+
+               <div>
+                  <p class="control-label textoInput">ACTIVOS:
+                  <p>
+               </div>
+
+               <div>
+                  <div class="form-check form-check-inline col-md-4">
+                     <input class="form-check-input" type="checkbox" id="activoEmbMayor"
+                        formControlName="ActivoEmbMayor">
+                     <label class="form-check-label" for="activoEmbMayor">
+                        EMBARCACIONES MAYORES
+                     </label>
+                  </div>
+                  <div class="form-check form-check-inline col-md-7">
+                     <input class="form-check-input" type="checkbox" id="activoEmbMenor"
+                        formControlName="ActivoEmbMenor">
+                     <label class="form-check-label" for="activoEmbMenor">
+                        EMBARCACIONES MENORES
+                     </label>
+                  </div>
+               </div>
+
+            </div>
+         </div>
+         <button class="btn botones"
+            style="background-color: brown; color:white; width: 10%; height: 38%; margin-left: 5%;">Confirmar</button>
+      </form>
+   </div>
+</section>
+
+
+<app-footer></app-footer>

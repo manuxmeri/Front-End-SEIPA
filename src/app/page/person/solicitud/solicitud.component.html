@@ -1,0 +1,140 @@
+<app-header></app-header>
+
+
+
+
+<div class="d-flex justify-content-between " style="margin-top:20px;  margin-left:20px;" >
+  <div class="d-flex" style="margin-right: 20px;"  >
+    <i class="bi bi-house-door" style="font-size: 20px;"></i>
+    <i class="bi bi-chevron-right" style="font-size: 20px;"></i>
+    <p style="font-family: 'Montserrat';font-size: 20px; "><a href="solicitud" style="text-decoration:none">Inicio</a></p>
+    <i class="bi bi-chevron-right" style="font-size: 20px;"></i>
+   <p style="font-family: 'Montserrat';font-size: 20px; " ><a href="solicitud" style="text-decoration:none">Solicitudes</a></p>
+   
+  </div>
+  <a href="#"   style="font-family: 'Montserrat';font-size: 20px; color:blue; margin-right:15px;">Manual de usuario</a>
+
+</div>
+
+
+    <section class="container-fluid">
+
+
+
+      <div class="d-flex justify-content-end  " style="margin-top:20px;  " >
+        <div class="d-flex text-center" >
+         <label for="" style="border:double  rgb(88, 88, 88); width:350px; height: 135px;">
+          <div  class="d-flex justify-content-center">
+            <div  class="d-flex justify-content-center ">
+              <i class="bi bi-person-circle " style="font-size: 35px;   " ></i>
+              
+            </div>
+            
+       
+        
+      </div>
+        
+        <div>
+        MANUX MERIDA JIMENEZ <br>
+       
+          RNPA:234758590
+        </div>
+        <div class="d-flex justify-content-end "  >
+          
+          <i class="bi bi-box-arrow-right"  style="font-size: 20px; margin-right:10px; margin-bottom:10px; "></i>
+        </div>
+         </label>
+         
+        </div>
+       
+        
+      
+      </div>
+      
+      
+      <div class="textosolicitud "  >
+        <p  class="solicitud" >Solicitudes</p>
+      </div>
+        <div class="borderso text-center"></div>
+  
+       <button (click)="openModal()" class=" butto2 button2">Agregar<i class="bi bi-plus-lg"></i></button>
+  
+  
+        <div class="row justify-content-end" style="margin-top: 50px;">
+          
+          <div class="col-md-3">
+            <div class="form-group">
+               <label class="control-label"><p>ESTATUS:</p></label>
+               <select class="form-select required" id="" name="">
+                      <option value="0">Selecciona una opción</option>
+                      <option value="1">Persona fisica</option>
+             <option value="2">Persona moral</option>
+                     
+                      <option value="3">Ambas</option>        
+               </select>
+               <p class="vacio" id=""></p>
+            </div>
+         </div>
+  
+         <div class="col-md-3">
+          <div class="form-group">
+             <label class="control-label"><p>PROCESO:</p></label>
+             <select class="form-select required" id="" name="">
+                    <option value="0">Selecciona una opción</option>
+                    <option value="1">Persona fisica</option>
+           <option value="2">Persona moral</option>
+                   
+                    <option value="3">Ambas</option>        
+             </select>
+             <p class="vacio" id=""></p>
+          </div>
+       </div>
+  
+       <div class="col-md-3">
+        <div class="form-group">
+           <label class="control-label"><p>MODALIDAD:</p></label>
+           <select class="form-select required" id="" name="">
+                  <option value="0">Selecciona una opción</option>
+                  <option value="1">Persona fisica</option>
+         <option value="2">Persona moral</option>
+                 
+                  <option value="3">Ambas</option>        
+           </select>
+           <p class="vacio" id=""></p>
+        </div>
+     </div>
+  
+  
+  
+        </div>
+  
+        <table class=" table table-striped text-center"  style=" margin-top:50px; margin-bottom: 80px; font-family: 'Montserrat'; font-size:17px; border:double rgb(179, 176, 176)">
+          <thead>
+            <tr >
+              <th scope="col">Folio</th>
+              <th scope="col">Fecha</th>
+              <th scope="col">CURP</th>
+              <th scope="col">Dueño</th>
+              <th scope="col">Telefono</th>
+              <th scope="col">Opciones</th>
+            </tr>
+          </thead>
+          <tbody class="text-center">
+            <tr *ngFor="let data of data ; let iControl = index">
+              <th scope="row">{{data.id}}</th>
+              <td>{{data.FechaRegistro}}</td>
+              <td>{{data.CURP}}</td>
+              <td>{{data.Nombres}} {{data.ApPaterno}} {{data.ApMaterno}} </td>
+              <td>{{data.NmPrincipal}}</td>
+              
+              <td><a type="button"><i class="bi bi-check2-all"></i></a>
+                <a type="button"  (click)="editar(data.id)"><i class="bi bi-file-earmark-post" style="margin-left: 6%;"></i></a>
+              </td>
+            </tr>
+           
+            
+          </tbody>
+        </table>
+    </section>
+    
+<app-footer></app-footer>

@@ -1,0 +1,66 @@
+<app-header></app-header>
+
+
+<section class="container">
+   <div class="textosolicitud " style=" font-family: 'Montserrat'; margin-top:30px; margin-bottom:30px;">
+      <p style=" font-size: 50px;"><strong>ESPECIES</strong></p>
+      <div>
+      </div>
+   </div>
+   <div class="order_boxes">
+      <div class="row">
+         <div class="col-lg-6 col-lx-4">
+            <div class="text-white p-1 text-center" style="background-color: #4D5FAB;">
+               LISTA DE ESPECIES
+            </div>
+            <div>
+               <table class="table"  style="text-transform: uppercase;">
+                  <tr *ngFor="let especie of data ; let iControl = index">
+                     <td>{{especie.id}}</td>
+                     <td>{{especie.NombreEspecie}}</td>
+                  </tr>
+               </table>
+            </div>
+         </div>
+         <div class="col-lg-6 col-lx-4">
+            <div class="text-white p-1 text-center" style="background-color: #4D5FAB;">
+               AGREGAR ESPECIE
+            </div>
+            <form class="row formularyborder" [formGroup]="FormEspecie" (submit)="enviar()" ngNativeValidate>
+               <div class="row formularyborder">
+
+
+                  <div class="col-md-12 marginput">
+                     <div class="form-group">
+                        <label class="control-label textoInput">NOMBRE:</label>
+                        <input formControlName="NombreEspecie"  maxlength="50"  type="text" required class="form-control required"
+                           style="text-transform: uppercase;">
+                        <p class="vacio" id=""></p>
+                     </div>
+                  </div>
+
+               </div>
+
+
+               <div class="row">
+                  <div class="col-md-12">
+                     <div class="d-flex justify-content-end  " style="margin-bottom: 50px;">
+                        <button class="btn btn-default botones" (click)="cancelar()" type="button " height="40px;"
+                           style="background-color: rgb(110, 109, 109); color:white;">Cancelar</button>
+                        <button class="btn  botones" style="background-color: brown; color:white;">Guardar</button>
+
+                     </div>
+                  </div>
+               </div>
+            </form>
+         </div>
+
+      </div>
+   </div>
+</section>
+
+
+
+
+
+<app-footer></app-footer>

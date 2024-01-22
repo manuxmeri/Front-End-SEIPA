@@ -1,0 +1,438 @@
+<app-header></app-header>
+
+
+<div class="d-flex justify-content-between " style="margin-top:20px;  margin-left:20px;" >
+   <div class="d-flex" >
+     <i class="bi bi-house-door" style="font-size: 22px;"></i>
+     <i class="bi bi-chevron-right" style="font-size: 22px;"></i>
+     <p style="font-family: 'Montserrat';font-size: 22px; " ><a href="solicitud" style="text-decoration:none">Solicitudes</a></p>
+     <i class="bi bi-chevron-right" style="font-size: 22px;"></i>
+    <p style="font-family: 'Montserrat';font-size: 22px; "><a href="unimoral" style="text-decoration:none">Unidad economica moral</a></p>
+    
+   </div>
+   <a href="#"   style="font-family: 'Montserrat';font-size: 22px; color:blue; margin-right:15px;">Manual de usuario</a>
+ 
+ </div>
+
+<section class="container ">
+
+   <div class="textosolicitud " style=" font-family: 'Montserrat'; margin-top:30px; ">
+      <p style=" font-size: 50px;"><strong>UNIDAD ECONOMICA</strong></p>
+      <div>
+         <p style=" font-family: 'Montserrat'; font-size: 35px; margin-top:35px; color:rgb(87, 86, 85)"><strong>Oficina
+               de registro</strong>
+         <p>
+      </div>
+   </div>
+   <div class="textosolicitud " style=" font-family: 'Montserrat'; margin-top:30px;">
+
+      <div>
+
+      </div>
+   </div>
+   
+
+   <div class="borderso text-center"></div>
+   <div>
+      <form class="row formularyborder" [formGroup]="FormUniMoral" (submit)="enviar()" ngNativeValidate>
+         <div class="row formularyborder">
+
+            <div class="col-md-4 marginput ">
+               <div class="form-group">
+                  <label class="control-label textoInput">OFICINA:</label>
+                  <select class="form-select " id="" name="Ofcid" formControlName="Ofcid" #Ofcid>
+                     <option *ngFor="let oficina of oficinas" [value]="oficina.id">{{ oficina.NombreOficina}}</option>
+                  </select>
+               </div>
+
+               <p class="vacio" id=""></p>
+            </div>
+
+            <div class="col-md-4 marginput">
+               <div class="form-group">
+                  <label class="control-label textoInput">FECHA:</label>
+                  <input class="form-control required" id="" name="" formControlName="FechaRegistro" type="date"
+                     required>
+                  <p class="vacio" id=""></p>
+               </div>
+            </div>
+
+            <div class="col-md-4 marginput">
+               <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                  <label class="control-label textoInput">CAPTURAR RNPA:</label>
+               </div>
+               <input class="form-control required" id="" name="" formControlName="RNPA" type="text" 
+                  style="text-transform: uppercase;" maxlength="10" required>
+               <p class="vacio" id=""></p>
+            </div>
+
+            <div class="col-md-12 marginput">
+               <div class="form-group">
+                  <label class="control-label textoInput">UNIDAD ECONOMICA DUEÑA:</label>
+                  <select class="form-select " id="" name="UEDuenoid" formControlName="UEDuenoid" #UEDuenoid>
+                     <option *ngFor="let dueno of Dueno" [value]="dueno.id">{{ dueno.Nombres}} {{ dueno.ApPaterno}} {{
+                        dueno.ApMaterno}}</option>
+                  </select>
+               </div>
+
+               <p class="vacio" id=""></p>
+            </div>
+
+            <div>
+               <p style=" font-family: 'Montserrat'; font-size: 35px; margin-top:35px; color:rgb(87, 86, 85)">
+                  <strong>Datos
+                     generales</strong>
+               <p>
+               <div class="borderso text-center"></div>
+
+            </div>
+
+            <div class="col-md-4 marginput">
+               <div class="form-group">
+                  <label class="control-label textoInput">RAZÓN SOCIAL:</label>
+                  <input class="form-control required mayus" id="" name="" formControlName="RazonSocial" type="text"
+                     style="text-transform: uppercase;" required>
+                  <p class="vacio" id=""></p>
+               </div>
+            </div>
+
+
+            <div class="col-md-4 marginput">
+               <div class="form-group">
+                  <label class="control-label textoInput">RFC:</label>
+                  <input class="form-control required mayus" id="" name="" formControlName="RFC" type="text"
+                     style="text-transform: uppercase;" maxlength="13" required>
+                  <p class="vacio" id=""></p>
+               </div>
+            </div>
+
+            <div class="col-md-4 marginput">
+               <div class="form-group">
+                  <label class="control-label textoInput">CORREO ELECTRONICO:</label>
+                  <input class="form-control required" id="" name="" formControlName="Email" type="text" required>
+                  <p class="vacio" id=""></p>
+               </div>
+            </div>
+
+            <div class="textosolicitud formularyborder " style=" font-family: 'Montserrat'; margin-top:30px;">
+
+               <div>
+                  <p style=" font-family: 'Montserrat'; font-size: 35px; margin-top:35px; color:rgb(87, 86, 85)">
+                     <strong>DOMICILIO</strong>
+                  <p>
+               </div>
+            </div>
+
+
+
+
+            <div class="borderso text-center"></div>
+
+
+
+
+            <div class="row">
+
+               <div class="col-md-12 marginput">
+                  <div class="form-group">
+                     <label class="control-label textoInput">CALLE:</label>
+                     <input class="form-control required mayus" id="" name="" formControlName="Calle" type="text"
+                        style="text-transform: uppercase;" required>
+                     <p class="vacio" id=""></p>
+                  </div>
+               </div>
+               <div class="col-md-4 marginput">
+                  <div class="form-group">
+                     <label class="control-label textoInput">NUMERO EXTERIOR<span id="">*</span>:</label>
+                     <input class="form-control required" id="" Name="" formControlName="NmExterior" type="text"
+                        maxlength="6" required>
+                     <p class="vacio" id=""></p>
+                  </div>
+               </div>
+
+
+               <div class="col-md-4 marginput">
+                  <div class="form-group">
+                     <label class="control-label textoInput">NUMERO INTERIOR<span id="">*</span>:</label>
+                     <input class="form-control required" id="" name="" formControlName="NmInterior" type="text"
+                        maxlength="6" required>
+                     <p class="vacio" id=""></p>
+                  </div>
+               </div>
+
+
+               <div class="col-md-4 marginput">
+                  <div class="form-group">
+                     <label class="control-label textoInput ">CODIGO POSTAL<span id="">*</span>:</label>
+                     <input class="form-control required" id="" name="" formControlName="CodigoPostal" type="text"
+                        maxlength="10" required>
+                     <p class="vacio" id=""></p>
+                  </div>
+               </div>
+
+               <div class="col-md-4 marginput">
+                  <div class="form-group">
+                     <label class="control-label textoInput">Regiones:</label>
+                     <select class="form-select " id="" name="Locid" formControlName="Locid" #Locid>
+                        <option *ngFor="let localidad of localidades" [value]="localidad.id">{{
+                           localidad.NombreLocalidad}}</option>
+                     </select>
+                     <p class="vacio" id=""></p>
+                  </div>
+               </div>
+
+               <div class="col-md-4 marginput">
+                  <div class="form-group">
+                     <label class="control-label textoInput">Distritos:</label>
+                     <select class="form-select " id="" name="Locid" formControlName="Locid" #Locid>
+                        <option *ngFor="let localidad of localidades" [value]="localidad.id">{{
+                           localidad.NombreLocalidad}}</option>
+                     </select>
+                     <p class="vacio" id=""></p>
+                  </div>
+               </div>
+
+               <div class="col-md-4 marginput">
+                  <div class="form-group">
+                     <label class="control-label textoInput">Municipios:</label>
+                     <select class="form-select " id="" name="Locid" formControlName="Locid" #Locid>
+                        <option *ngFor="let localidad of localidades" [value]="localidad.id">{{
+                           localidad.NombreLocalidad}}</option>
+                     </select>
+                     <p class="vacio" id=""></p>
+                  </div>
+               </div>
+
+               <div class="col-md-4 marginput">
+                  <div class="form-group">
+                     <label class="control-label textoInput">Localidad:</label>
+                     <select class="form-select " id="" name="Locid" formControlName="Locid" #Locid>
+                        <option *ngFor="let localidad of localidades" [value]="localidad.id">{{
+                           localidad.NombreLocalidad}}</option>
+                     </select>
+                     <p class="vacio" id=""></p>
+                  </div>
+               </div>
+
+               
+
+               <div class="col-md-4 marginput">
+                  <div class="form-group">
+                     <label class="control-label textoInput">TELEFONO PRINCIPAL<span id="">*</span>:</label>
+                     <input class="form-control required" id="" name="NmPrincipal" formControlName="NmPrincipal"
+                        type="text" maxlength="10">
+                     <p class="vacio" id=""></p>
+                  </div>
+               </div>
+
+               <div class="col-md-4 marginput">
+                  <div class="form-group">
+                     <label class="control-label textoInput">TIPO PRINCIPAL:</label>
+                     <select class="form-select required" id="" name="" formControlName="TpNmPrincipal" required>
+                        <option selected>Selecciona una opción</option>
+                        <option value="CASA">CASA</option>
+                        <option value="MOVIL">MOVIL</option>
+                        <option value="OFICINA">OFICINA</option>
+                     </select>
+                     <p class="vacio" id=""></p>
+                  </div>
+               </div>
+
+               <div class="col-md-4 marginput">
+                  <div class="form-group">
+                     <label class="control-label textoInput">TELEFONO SECUNDARIO<span id="">*</span>:</label>
+                     <input class="form-control required" id="" name="NmSecundario" formControlName="NmSecundario"
+                        type="text" maxlength="10">
+                     <p class="vacio" id=""></p>
+                  </div>
+               </div>
+
+               <div class="col-md-4 marginput">
+                  <div class="form-group">
+                     <label class="control-label textoInput">TIPO SECUNDARIO:</label>
+                     <select class="form-select required" id="" name="" formControlName="TpNmSecundario" required>
+                        <option selected>Selecciona una opción</option>
+                        <option value="CASA">CASA</option>
+                        <option value="MOVIL">MOVIL</option>
+                        <option value="OFICINA">OFICINA</option>
+                     </select>
+                     <p class="vacio" id=""></p>
+                  </div>
+               </div>
+
+
+
+
+            </div>
+         
+
+
+            <div>
+               <p style=" font-family: 'Montserrat'; font-size: 35px;  color:rgb(87, 86, 85)"><strong>Detalle</strong>
+               <p>
+            </div>
+
+            <div class="borderso text-center"></div>
+
+
+
+            <div class="row">
+
+
+               <div class="d-flex justify-content-between ">
+
+                  <div class="col-md-4 marginput">
+                     <div class="form-group"  >
+                        <label class="control-label textoInput">FECHA DE OPERACIONES</label>
+                        <input class="form-control required input" id="" name="" formControlName="IniOperaciones" type="date"
+                               required>
+                        <p class="vacio" id=""></p>
+                    </div>
+                  </div>
+                  <div class="col-md-2 marginput ">
+                </div>
+                  <div class="col-md-4 marginput ">
+                   <label class="control-label textoInput">ACTIVOS:</label>
+                   <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="activoEmbMayor" formControlName="ActivoEmbMayor">
+                      <label class="form-check-label" for="activoEmbMayor">
+                         EMBARCACIONES MAYORES
+                      </label>
+                   </div>
+                   <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="activoEmbMenor" formControlName="ActivoEmbMenor">
+                      <label class="form-check-label" for="activoEmbMenor">
+                         EMBARCACIONES MENORES
+                      </label>
+                   </div>
+                </div>
+             
+          
+                 
+          
+                  <div class="col-md-4 marginput ">
+                   <div class="form-group ">
+                     
+                         <label class="control-label textoInput">ACTIVIDAD PESQUERA:</label>
+                         <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="activoEmbMayor" formControlName="ActvAcuacultura" >
+                            <label class="form-check-label" for="ActvAcuacultura">
+                               ACTIVIDAD ACUACULTURA
+                            </label>
+                         </div>
+                         <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="ActvPesca" formControlName="ActvPesca">
+                            <label class="form-check-label" for="ActvPesca">
+                               ACTIVIDAD PESQUERA
+                            </label>
+                         
+                      </div>
+                   </div>
+                </div>
+             </div>
+
+
+             <div class="form-group ">
+               <strong > <p style=" font-family: 'Montserrat'; font-size: 18px; margin-bottom: 10px;">IMPORTAR DOCUMENTOS</p></strong>
+                
+               <table class=" table  "
+               style="font-family: 'Montserrat'; font-size:16px; border:solid 1px black">
+              
+               <thead class="text-center">
+                  
+                  <tr >
+                    
+                     
+                     <th scope="col"  style="background-color: #7B1E34;  color: white;">DOCUMENTO</th>
+                     <th scope="col" style="background-color: #7B1E34;  color: white;">ARCHIVO</th>
+                  </tr>
+               </thead>
+               <tbody class="text-center" >
+                  <tr >
+                     <td >Documento de representante legal</td>
+                     <td>
+                      
+                           
+         
+                           
+                            <label for="pdfFile" class="custom-input custom-button">
+                              <i class="bi bi-folder-plus"></i> Subir PDF
+                           </label> 
+                              <input class="form-control required input " type="file" accept=".pdf" class="file-input" id="" name="" formControlName="DocRepresentanteLegal"
+                            required>
+                         
+                       
+                     
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>Documento de acta constitutiva</td>
+                     <td>
+                       
+                           <label for="pdfFile" class="custom-input custom-button">
+                              <i class="bi bi-folder-plus"></i> Subir PDF
+                          </label> 
+                          
+                           <input class="form-control required input"  type="file"   accept=".pdf" class="file-input" id="" name="" formControlName="DocActaConstitutiva"
+                         required>
+                      
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>Documento de acta de asambrea</td>
+                     <td>
+                       
+                           <label for="pdfFile" class="custom-input custom-button">
+                              <i class="bi bi-folder-plus"></i> Subir PDF
+                          </label> 
+                          <input class="form-control required input"  type="file"   accept=".pdf" class="file-input" id="" name="" formControlName="DocActaAsamblea"
+                          required>
+                      
+                     </td>
+                  </tr>
+                 
+               </tbody>
+            </table>
+            </div>
+
+               <div class="col-md-4 marginput">
+                  <div class="form-group">
+                     <label class="control-label textoInput">CANTIDAD DE PESCADOR (ES)*:</label>
+                     <input class="form-control required input" id="" name="" type="number"
+                        formControlName="CantidadPescadores" required>
+                     <p class="vacio" id=""></p>
+                  </div>
+               </div>
+               <!--PRUEBA-->
+             
+             
+
+              
+               <!--FIN PRUEBA-->
+
+
+               
+            </div>
+         </div>
+      
+         <div class="row">
+            <div class="col-md-12">
+               <div class="pull-left">
+                  <p class="top_10">* Campos obligatorios</p>
+               </div>
+               <div class="d-flex justify-content-end  " style="margin-bottom: 50px;">
+                  <button class="btn btn-default botones" id="btn_cancelar" type="button "  height="40px;" style="background-color: rgb(110, 109, 109); color:white;">Cancelar</button>
+                  <button class="btn  botones"  style="background-color: brown; color:white;" >Guardar</button>
+                
+               </div>
+            
+            </div>
+            
+         </div>
+      </form>
+   </div>
+</section>
+
+
+<app-footer></app-footer>

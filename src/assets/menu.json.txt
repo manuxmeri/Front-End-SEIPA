@@ -1,0 +1,20 @@
+[
+  {
+    "titulo": "Solicitudes",
+    "url": "/solicitudes",
+    "icono": "bi bi-file-text",
+    "roles": ["usuario", "administrador"]
+  },
+  {
+    "titulo": "Avisos",
+    "url": "/avisos",
+    "icono": "bi bi-bell",
+    "roles": ["administrador"]
+  },
+  {
+    "titulo": "Reportes",
+    "url": "/reportes",
+    "icono": "bi bi-file-earmark-bar-graph",
+    "roles": ["administrador"]
+  }
+]

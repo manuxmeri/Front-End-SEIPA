@@ -1,0 +1,56 @@
+.custom-dialog-title {
+    border-top: solid 1px rgb(199, 199, 199);
+    color: #962121; 
+    font-size: 24px;  
+    padding: 10px; 
+  }
+
+  
+  .butto2 {
+    background-color: rgb(110, 109, 109); 
+    border: none;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    font-family: 'Montserrat';
+    font-size: 15px;
+    width: 90px;
+    height: 40px;
+}
+
+.butto1{
+    background-color: #1E437B;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    font-family: 'Montserrat';
+    font-size: 15px;
+    width: 90px;
+    height: 40px;
+}
+
+  .custom-dialog-content {
+    font-family: 'Montserrat'; 
+    color: rgb(53, 53, 53);
+    font-size: 16px; 
+    line-height: 1.4; 
+    margin-bottom: 20px; 
+    
+  }
+  
+  .custom-dialog-actions {
+    display: flex; 
+    justify-content: flex-end; 
+    padding: 20px 20px;
+   
+  }
+  
+  .custom-dialog-actions button {
+    margin-left: 10px; 
+  }
+  

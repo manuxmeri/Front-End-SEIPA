@@ -1,0 +1,61 @@
+<app-header></app-header>
+
+<section class="container ">
+
+  <div class="d-flex justify-content-between " style="margin-top:20px;">
+      <div class="d-flex">
+          <i class="bi bi-house-door" style="font-size: 25px;"></i>
+          <i class="bi bi-chevron-right" style="font-size: 25px;"></i>
+          <p style="font-family: 'Montserrat';font-size: 25px; ">Solicitudes</p>
+          <i class="bi bi-chevron-right" style="font-size: 25px;"></i>
+          <p style="font-family: 'Montserrat';font-size: 25px; ">Unidad Economica</p>
+          <i class="bi bi-chevron-right" style="font-size: 25px;"></i>
+          <p style="font-family: 'Montserrat';font-size: 25px; ">Editar Oficina</p>
+
+      </div>
+      <a href="#" style="font-family: 'Montserrat';font-size: 25px; color:blue; margin-right:15px;">Manual de
+          usuario</a>
+
+  </div>
+
+  <div class="textosolicitud " style=" font-family: 'Montserrat'; margin-top:30px; ">
+      <div>
+          <p style=" font-family: 'Montserrat'; font-size: 35px; margin-top:35px; color:rgb(87, 86, 85)">
+              <strong>Editar Oficina</strong>
+          <p>
+      </div>
+  </div>
+  <div class="textosolicitud " style=" font-family: 'Montserrat'; margin-top:30px;">
+
+    <div>
+
+    </div>
+</div>
+  <div class="borderso text-center"></div>
+
+  <div class="row formularyborder" style="margin-top: 50px;">
+    <form [formGroup]="formuOfi" (ngSubmit)="put()" ngNativeValidate>
+        <div class="form-group  textoInput">
+          <label for="">Nombre:</label>
+          <input type="text" required formControlName="NombreOficina" id="" class="form-control">
+        </div>
+        <div class="form-group  textoInput">
+            <label for="">Ubicacion:</label>
+            <input type="text" required name="" formControlName="Ubicacion" id="" class="form-control">
+          </div>
+          <div class="form-group  textoInput">
+            <label for="">Telefono:</label>
+            <input type="text" required name="" formControlName="Telefono" id="" class="form-control">
+          </div>
+          <div class="form-group  textoInput">
+            <label for="">Email:</label>
+            <input type="text" required name="" formControlName="Email" id="" class="form-control">
+          </div>
+          <br>
+          <button class="btn  botones" style="background-color: brown; color:white;">Guardar Cambio</button>
+
+        </form>
+  </div>
+</section>
+<br>
+<app-footer></app-footer>
